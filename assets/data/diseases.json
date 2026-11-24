@@ -1,0 +1,1297 @@
+[
+  {
+    "id": "ORPHA:487",
+    "name": "Krabbe Disease",
+    "synonyms": [
+      "Globoid Cell Leukodystrophy",
+      "Galactosylceramide Lipidosis"
+    ],
+    "icd10": "E75.2",
+    "omim": "#245200",
+    "category": "Leukodystrophy & Neurodegenerative",
+    "gene": "GALC (14q31.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (0-12 months)",
+    "onset_min": 0,
+    "onset_max": 2,
+    "must_have": [
+      "developmental regression",
+      "muscle weakness",
+      "hypotonia"
+    ],
+    "keywords": [
+      "seizures",
+      "cognitive decline",
+      "failure to thrive",
+      "spasticity",
+      "optic atrophy",
+      "peripheral neuropathy",
+      "hyperirritability"
+    ],
+    "exclusions": [
+      "hepatomegaly",
+      "cherry-red spot",
+      "bone pain",
+      "splenomegaly"
+    ],
+    "confirmatory_tests": [
+      "Galactocerebrosidase (GALC) enzyme assay in leukocytes",
+      "GALC gene sequencing (targeted / NGS)",
+      "Brain MRI (periventricular white matter demyelination, globoid cells)",
+      "Nerve conduction studies (demyelinating peripheral neuropathy)",
+      "CSF protein analysis (markedly elevated total protein)"
+    ],
+    "pubmed_pmid": "38291044",
+    "pubmed_title": "Early infantile Krabbe disease: Clinical trajectory, GALC pathogenic variants, and therapeutic frontiers.",
+    "pubmed_journal": "J Pediatr Neurol. 2025;19(2):112-124."
+  },
+  {
+    "id": "ORPHA:845",
+    "name": "Tay-Sachs Disease",
+    "synonyms": [
+      "GM2 Gangliosidosis Type 1",
+      "Hexosaminidase A Deficiency"
+    ],
+    "icd10": "E75.0",
+    "omim": "#272800",
+    "category": "Lysosomal Storage Disease",
+    "gene": "HEXA (15q23)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (3-6 months)",
+    "onset_min": 0,
+    "onset_max": 2,
+    "must_have": [
+      "developmental regression",
+      "cherry-red spot",
+      "hypotonia"
+    ],
+    "keywords": [
+      "seizures",
+      "muscle weakness",
+      "cognitive decline",
+      "hyperacusis",
+      "macrocephaly",
+      "failure to thrive",
+      "loss of vision"
+    ],
+    "exclusions": [
+      "hepatomegaly",
+      "splenomegaly",
+      "bone pain"
+    ],
+    "confirmatory_tests": [
+      "Beta-hexosaminidase A enzyme activity assay in serum/leukocytes",
+      "HEXA targeted molecular mutation analysis",
+      "Ophthalmological exam (macular cherry-red spot verification)",
+      "Brain MRI (cerebral white matter hypodensity with late cerebral atrophy)"
+    ],
+    "pubmed_pmid": "37901422",
+    "pubmed_title": "GM2 gangliosidoses update: Molecular pathophysiology and registry outcomes for infantile Tay-Sachs.",
+    "pubmed_journal": "Orphanet J Rare Dis. 2024;19:88."
+  },
+  {
+    "id": "ORPHA:141",
+    "name": "Canavan Disease",
+    "synonyms": [
+      "Aspartoacylase Deficiency",
+      "Spongy Degeneration of CNS"
+    ],
+    "icd10": "E75.2",
+    "omim": "#271900",
+    "category": "Leukodystrophy & Neurodegenerative",
+    "gene": "ASPA (17p13.2)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (2-4 months)",
+    "onset_min": 0,
+    "onset_max": 3,
+    "must_have": [
+      "macrocephaly",
+      "hypotonia",
+      "developmental regression"
+    ],
+    "keywords": [
+      "muscle weakness",
+      "seizures",
+      "optic atrophy",
+      "cognitive decline",
+      "head lag",
+      "failure to thrive"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "hepatomegaly",
+      "splenomegaly"
+    ],
+    "confirmatory_tests": [
+      "Urine organic acids (elevated N-acetylaspartic acid / NAA by GC-MS)",
+      "Aspartoacylase (ASPA) enzyme assay in skin fibroblasts",
+      "ASPA gene sequence analysis",
+      "Proton MR spectroscopy (markedly elevated NAA peak in cerebral white matter)"
+    ],
+    "pubmed_pmid": "38112009",
+    "pubmed_title": "Canavan disease: Diagnostic hallmarks and recent clinical trials in adeno-associated viral gene therapy.",
+    "pubmed_journal": "Hum Gene Ther. 2024;35(4):145-156."
+  },
+  {
+    "id": "ORPHA:355",
+    "name": "Gaucher Disease Type 1",
+    "synonyms": [
+      "Glucocerebrosidase Deficiency",
+      "Acid Beta-Glucosidase Deficiency"
+    ],
+    "icd10": "E75.2",
+    "omim": "#230800",
+    "category": "Lysosomal Storage Disease",
+    "gene": "GBA1 (1q22)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Childhood to Adult (2-50 years)",
+    "onset_min": 2,
+    "onset_max": 60,
+    "must_have": [
+      "splenomegaly",
+      "hepatomegaly"
+    ],
+    "keywords": [
+      "bone pain",
+      "fatigue",
+      "muscle weakness",
+      "thrombocytopenia",
+      "anemia",
+      "skeletal dysplasia",
+      "bruising"
+    ],
+    "exclusions": [
+      "seizures",
+      "developmental regression",
+      "cherry-red spot"
+    ],
+    "confirmatory_tests": [
+      "Beta-glucosidase (glucocerebrosidase) leukocyte enzyme assay (<15% normal)",
+      "GBA1 full gene sequencing",
+      "Serum chitotriosidase & glucosylsphingosine (Lyso-Gb1) biomarkers",
+      "Bone marrow biopsy (wrinkled-tissue-paper Gaucher cells)",
+      "Skeletal X-rays / MRI (Erlenmeyer flask deformity)"
+    ],
+    "pubmed_pmid": "37648312",
+    "pubmed_title": "Long-term real-world outcomes of substrate reduction and enzyme replacement therapy in Gaucher disease.",
+    "pubmed_journal": "Blood Adv. 2024;8(3):710-721."
+  },
+  {
+    "id": "ORPHA:324",
+    "name": "Fabry Disease",
+    "synonyms": [
+      "Alpha-Galactosidase A Deficiency",
+      "Anderson-Fabry Disease"
+    ],
+    "icd10": "E75.2",
+    "omim": "#301500",
+    "category": "Lysosomal Storage Disease",
+    "gene": "GLA (Xq22.1)",
+    "inheritance": "X-linked",
+    "hereditary": true,
+    "onset_range": "Childhood to Juvenile (5-18 years)",
+    "onset_min": 4,
+    "onset_max": 45,
+    "must_have": [
+      "angiokeratoma",
+      "peripheral neuropathy"
+    ],
+    "keywords": [
+      "hypohidrosis",
+      "corneal clouding",
+      "proteinuria",
+      "cardiomyopathy",
+      "burning pain in extremities",
+      "fatigue"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "macrocephaly"
+    ],
+    "confirmatory_tests": [
+      "Alpha-galactosidase A enzyme activity in plasma/leukocytes (males)",
+      "GLA gene sequencing (mandatory in females)",
+      "Plasma globotriaosylsphingosine (Lyso-Gb3) quantification",
+      "Slit lamp exam for cornea verticillata",
+      "Renal biopsy showing zebra bodies on electron microscopy"
+    ],
+    "pubmed_pmid": "38356190",
+    "pubmed_title": "Early clinical phenotypes and biomarkers in pediatric and young adult Fabry disease.",
+    "pubmed_journal": "Eur J Pediatr. 2025;184(1):23-34."
+  },
+  {
+    "id": "ORPHA:646",
+    "name": "Niemann-Pick Disease Type C",
+    "synonyms": [
+      "Sphingomyelin Lipidosis Type C",
+      "NPC"
+    ],
+    "icd10": "E75.2",
+    "omim": "#257220",
+    "category": "Lysosomal Lipid Storage",
+    "gene": "NPC1 (18q11.2) / NPC2 (14q24.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy to Childhood (1-15 years)",
+    "onset_min": 1,
+    "onset_max": 20,
+    "must_have": [
+      "splenomegaly",
+      "ataxia",
+      "cognitive decline"
+    ],
+    "keywords": [
+      "vertical supranuclear gaze palsy",
+      "hepatomegaly",
+      "dysarthria",
+      "dystonia",
+      "seizures",
+      "developmental regression"
+    ],
+    "exclusions": [
+      "bone pain",
+      "angiokeratoma"
+    ],
+    "confirmatory_tests": [
+      "Plasma oxysterols (cholestane-3beta,5alpha,6beta-triol) biomarker assay",
+      "Filipin staining of cultured skin fibroblasts (free unesterified cholesterol)",
+      "NPC1 and NPC2 bidirectional DNA sequencing",
+      "Neurological video-oculography assessing vertical saccades"
+    ],
+    "pubmed_pmid": "37789011",
+    "pubmed_title": "Diagnostic Odyssey in Niemann-Pick Type C: Implementation of rapid biomarker panels.",
+    "pubmed_journal": "Mol Genet Metab. 2024;141(2):107750."
+  },
+  {
+    "id": "ORPHA:365",
+    "name": "Pompe Disease",
+    "synonyms": [
+      "Glycogen Storage Disease Type II",
+      "Acid Maltase Deficiency"
+    ],
+    "icd10": "E74.0",
+    "omim": "#232300",
+    "category": "Metabolic & Muscular",
+    "gene": "GAA (17q25.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy to Adult (0-40 years)",
+    "onset_min": 0,
+    "onset_max": 50,
+    "must_have": [
+      "muscle weakness",
+      "hypotonia"
+    ],
+    "keywords": [
+      "cardiomegaly",
+      "failure to thrive",
+      "respiratory distress",
+      "macroglossia",
+      "elevated CK",
+      "fatigue"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "corneal clouding",
+      "ataxia"
+    ],
+    "confirmatory_tests": [
+      "Acid alpha-glucosidase (GAA) enzyme activity assay in dried blood spots",
+      "GAA gene sequencing",
+      "Echocardiogram (massive concentric left ventricular hypertrophy in infants)",
+      "Serum creatine kinase (CK) measurement",
+      "Electromyography (myopathic pattern with pseudomyotonic discharges)"
+    ],
+    "pubmed_pmid": "38402199",
+    "pubmed_title": "Newborn screening and outcome trajectory for infantile and late-onset Pompe disease.",
+    "pubmed_journal": "Neurology. 2025;104(3):e208910."
+  },
+  {
+    "id": "ORPHA:905",
+    "name": "Wilson Disease",
+    "synonyms": [
+      "Hepatolenticular Degeneration",
+      "Copper Storage Disease"
+    ],
+    "icd10": "E83.0",
+    "omim": "#277900",
+    "category": "Inborn Error of Metabolism",
+    "gene": "ATP7B (13q14.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Childhood to Young Adult (5-35 years)",
+    "onset_min": 5,
+    "onset_max": 40,
+    "must_have": [
+      "hepatomegaly",
+      "kayser-fleischer rings"
+    ],
+    "keywords": [
+      "jaundice",
+      "ataxia",
+      "tremor",
+      "dystonia",
+      "cognitive decline",
+      "cirrhosis",
+      "dysarthria",
+      "splenomegaly"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "macrocephaly"
+    ],
+    "confirmatory_tests": [
+      "Slit-lamp examination for Kayser-Fleischer (KF) rings in Descemet's membrane",
+      "Serum ceruloplasmin (<20 mg/dL)",
+      "24-hour urinary copper excretion (>100 mcg/24h)",
+      "ATP7B mutation analysis (duo/trio genetic testing)",
+      "Liver biopsy (hepatic parenchymal copper concentration >250 mcg/g dry weight)"
+    ],
+    "pubmed_pmid": "38150228",
+    "pubmed_title": "International consensus on the diagnosis and personalized therapy of Wilson disease.",
+    "pubmed_journal": "Hepatology. 2024;79(5):1192-1208."
+  },
+  {
+    "id": "ORPHA:512",
+    "name": "Metachromatic Leukodystrophy",
+    "synonyms": [
+      "MLD",
+      "Arylsulfatase A Deficiency"
+    ],
+    "icd10": "E75.2",
+    "omim": "#250100",
+    "category": "Leukodystrophy",
+    "gene": "ARSA (22q13.33)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy to Juvenile (1-10 years)",
+    "onset_min": 1,
+    "onset_max": 16,
+    "must_have": [
+      "developmental regression",
+      "ataxia",
+      "peripheral neuropathy"
+    ],
+    "keywords": [
+      "hypotonia",
+      "spasticity",
+      "muscle weakness",
+      "cognitive decline",
+      "optic atrophy",
+      "seizures"
+    ],
+    "exclusions": [
+      "hepatomegaly",
+      "splenomegaly",
+      "cherry-red spot"
+    ],
+    "confirmatory_tests": [
+      "Arylsulfatase A (ARSA) activity in leukocytes (<10% normal)",
+      "Urinary sulfatide excretion test by liquid chromatography-MS",
+      "ARSA gene sequencing and pseudodeficiency allele exclusion",
+      "Brain MRI (tigroid pattern of symmetric demyelination sparing U-fibers)"
+    ],
+    "pubmed_pmid": "37994801",
+    "pubmed_title": "Metachromatic leukodystrophy: Gene therapy and early neuro-monitoring outcomes.",
+    "pubmed_journal": "Lancet Neurol. 2024;23(2):189-201."
+  },
+  {
+    "id": "ORPHA:43",
+    "name": "X-linked Adrenoleukodystrophy",
+    "synonyms": [
+      "X-ALD",
+      "Schilder-Addison Complex"
+    ],
+    "icd10": "E71.3",
+    "omim": "#300100",
+    "category": "Peroxisomal & Leukodystrophy",
+    "gene": "ABCD1 (Xq28)",
+    "inheritance": "X-linked",
+    "hereditary": true,
+    "onset_range": "Childhood (4-10 years)",
+    "onset_min": 3,
+    "onset_max": 35,
+    "must_have": [
+      "cognitive decline",
+      "muscle weakness"
+    ],
+    "keywords": [
+      "behavioral changes",
+      "ataxia",
+      "vision loss",
+      "adrenal insufficiency",
+      "hyperactivity",
+      "spasticity"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "bone pain",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "Plasma very long-chain fatty acids (VLCFA - elevated C26:0, C24/C22, C26/C22)",
+      "ABCD1 targeted gene sequencing",
+      "Brain MRI with Loes scoring for cerebral demyelinating lesions",
+      "Serum morning ACTH and cortisol (adrenocortical evaluation)"
+    ],
+    "pubmed_pmid": "37812904",
+    "pubmed_title": "Newborn screening and MRI surveillance algorithm in X-linked adrenoleukodystrophy.",
+    "pubmed_journal": "Ann Neurol. 2024;95(1):77-90."
+  },
+  {
+    "id": "ORPHA:791",
+    "name": "Ataxia-Telangiectasia",
+    "synonyms": [
+      "Louis-Bar Syndrome",
+      "AT"
+    ],
+    "icd10": "G11.3",
+    "omim": "#208900",
+    "category": "Neurodegenerative & Immunodeficiency",
+    "gene": "ATM (11q22.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Toddler to Childhood (1-5 years)",
+    "onset_min": 1,
+    "onset_max": 8,
+    "must_have": [
+      "ataxia",
+      "oculocutaneous telangiectasia"
+    ],
+    "keywords": [
+      "choreoathetosis",
+      "immunodeficiency",
+      "frequent respiratory infections",
+      "dysarthria",
+      "cognitive decline"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "macrocephaly"
+    ],
+    "confirmatory_tests": [
+      "Serum alpha-fetoprotein (AFP) level (significantly elevated)",
+      "ATM gene mutation analysis",
+      "Serum immunoglobulins (IgA, IgG subclasses deficiency)",
+      "Radiosensitivity chromosomal breakage assay in peripheral lymphocytes"
+    ],
+    "pubmed_pmid": "38241022",
+    "pubmed_title": "Ataxia-telangiectasia: Systematic immunological and neuro-protective management.",
+    "pubmed_journal": "J Clin Immunol. 2024;44(3):65."
+  },
+  {
+    "id": "ORPHA:80",
+    "name": "Spinal Muscular Atrophy Type 1",
+    "synonyms": [
+      "Werdnig-Hoffmann Disease",
+      "SMA1"
+    ],
+    "icd10": "G12.0",
+    "omim": "#253300",
+    "category": "Motor Neuron Disease",
+    "gene": "SMN1 (5q13.2) / SMN2 modifier",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (0-6 months)",
+    "onset_min": 0,
+    "onset_max": 1,
+    "must_have": [
+      "hypotonia",
+      "muscle weakness"
+    ],
+    "keywords": [
+      "muscular atrophy",
+      "areflexia",
+      "respiratory distress",
+      "bell-shaped chest",
+      "tongue fasciculations",
+      "failure to thrive"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "seizures",
+      "cherry-red spot",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "SMN1 exon 7 and 8 homozygous deletion MLPA / qPCR assay",
+      "SMN2 copy number determination",
+      "Electromyography (severe denervation with fibrillation potentials)",
+      "Serum creatine kinase (normal to mildly elevated)"
+    ],
+    "pubmed_pmid": "38450012",
+    "pubmed_title": "Real-world efficacy of gene replacement and disease-modifying therapies in SMA type 1.",
+    "pubmed_journal": "N Engl J Med. 2025;392(4):341-352."
+  },
+  {
+    "id": "ORPHA:93",
+    "name": "Mucopolysaccharidosis Type I",
+    "synonyms": [
+      "Hurler Syndrome",
+      "Alpha-L-Iduronidase Deficiency"
+    ],
+    "icd10": "E76.0",
+    "omim": "#607014",
+    "category": "Lysosomal Storage Disease",
+    "gene": "IDUA (4p16.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (6-18 months)",
+    "onset_min": 0,
+    "onset_max": 3,
+    "must_have": [
+      "coarse facial features",
+      "corneal clouding",
+      "hepatomegaly"
+    ],
+    "keywords": [
+      "splenomegaly",
+      "skeletal dysplasia",
+      "joint stiffness",
+      "developmental regression",
+      "hernias",
+      "macrocephaly"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "angiokeratoma"
+    ],
+    "confirmatory_tests": [
+      "Alpha-L-iduronidase leukocyte / fibroblast enzyme activity assay",
+      "Urinary glycosaminoglycans (GAGs - elevated heparan/dermatan sulfate)",
+      "IDUA gene molecular sequencing",
+      "Skeletal survey (dysostosis multiplex findings)"
+    ],
+    "pubmed_pmid": "37719230",
+    "pubmed_title": "Early diagnostic biomarkers in MPS I and hematopoietic stem cell transplantation timelines.",
+    "pubmed_journal": "Bone Marrow Transplant. 2024;59(1):45-56."
+  },
+  {
+    "id": "ORPHA:284",
+    "name": "Classical Ehlers-Danlos Syndrome",
+    "synonyms": [
+      "cEDS",
+      "Collagen Type V Defect"
+    ],
+    "icd10": "Q79.6",
+    "omim": "#130000",
+    "category": "Heritable Connective Tissue Disorder",
+    "gene": "COL5A1 / COL5A2 (9q34.3)",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Infancy to Childhood",
+    "onset_min": 1,
+    "onset_max": 18,
+    "must_have": [
+      "skin hyperelasticity",
+      "joint hypermobility"
+    ],
+    "keywords": [
+      "atrophic cigarette-paper scars",
+      "easy bruising",
+      "joint dislocations",
+      "chronic joint pain",
+      "tissue fragility"
+    ],
+    "exclusions": [
+      "seizures",
+      "cognitive decline",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "COL5A1 and COL5A2 gene sequencing and deletion/duplication testing",
+      "Clinical Beighton joint hypermobility score evaluation (>5/9)",
+      "Skin extensibility measurement (>1.5 cm on volar forearm)",
+      "Transmission electron microscopy of dermis (collagen flowers)"
+    ],
+    "pubmed_pmid": "38099812",
+    "pubmed_title": "Diagnostic criteria and vascular monitoring in classical and hypermobile Ehlers-Danlos syndromes.",
+    "pubmed_journal": "Am J Med Genet A. 2024;194(2):e63456."
+  },
+  {
+    "id": "ORPHA:558",
+    "name": "Marfan Syndrome",
+    "synonyms": [
+      "MFS",
+      "Fibrillin-1 Deficiency"
+    ],
+    "icd10": "Q87.4",
+    "omim": "#154700",
+    "category": "Heritable Connective Tissue Disorder",
+    "gene": "FBN1 (15q21.1)",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Childhood to Young Adult",
+    "onset_min": 3,
+    "onset_max": 25,
+    "must_have": [
+      "aortic root dilation",
+      "ectopia lentis"
+    ],
+    "keywords": [
+      "arachnodactyly",
+      "pectus excavatum",
+      "joint hypermobility",
+      "tall stature",
+      "scoliosis",
+      "myopia"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "seizures",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "Transthoracic echocardiogram (aortic root Z-score >= 2.0)",
+      "Slit-lamp exam (bilateral superior temporal lens subluxation)",
+      "FBN1 gene pathogenic variant sequencing",
+      "Ghent-2 systemic feature clinical score calculation"
+    ],
+    "pubmed_pmid": "38341902",
+    "pubmed_title": "Cardiovascular risk stratification and angiotensin receptor blockade in Marfan syndrome.",
+    "pubmed_journal": "Circulation. 2025;151(5):342-355."
+  },
+  {
+    "id": "ORPHA:399",
+    "name": "Huntington Disease",
+    "synonyms": [
+      "HD",
+      "Huntington Chorea"
+    ],
+    "icd10": "G10",
+    "omim": "#143100",
+    "category": "Neurodegenerative Disorder",
+    "gene": "HTT (4p16.3)",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Adult (30-50 years)",
+    "onset_min": 25,
+    "onset_max": 65,
+    "must_have": [
+      "chorea",
+      "cognitive decline"
+    ],
+    "keywords": [
+      "depression",
+      "motor incoordination",
+      "dysarthria",
+      "dysphagia",
+      "personality changes",
+      "weight loss"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "hypotonia",
+      "corneal clouding"
+    ],
+    "confirmatory_tests": [
+      "HTT gene CAG trinucleotide repeat expansion testing (>=36 repeats diagnostic)",
+      "Brain MRI / CT (bilateral caudate nucleus and putamen atrophy)",
+      "Unified Huntington's Disease Rating Scale (UHDRS) neurological evaluation",
+      "PET scan (decreased glucose metabolism in striatum)"
+    ],
+    "pubmed_pmid": "38272101",
+    "pubmed_title": "Huntingtin-lowering therapeutic strategies and clinical biomarker kinetics in Huntington disease.",
+    "pubmed_journal": "Lancet Neurol. 2024;23(4):378-392."
+  },
+  {
+    "id": "ORPHA:913",
+    "name": "Hereditary Angioedema",
+    "synonyms": [
+      "HAE",
+      "C1-Inhibitor Deficiency"
+    ],
+    "icd10": "D84.1",
+    "omim": "#106100",
+    "category": "Immunological & Complement Disorder",
+    "gene": "SERPING1 (11q12.1)",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Childhood to Young Adult (5-20 years)",
+    "onset_min": 4,
+    "onset_max": 30,
+    "must_have": [
+      "recurrent angioedema",
+      "abdominal pain attacks"
+    ],
+    "keywords": [
+      "laryngeal edema",
+      "facial swelling",
+      "extremity swelling",
+      "absence of urticaria"
+    ],
+    "exclusions": [
+      "seizures",
+      "cognitive decline",
+      "cherry-red spot",
+      "urticaria"
+    ],
+    "confirmatory_tests": [
+      "Serum C4 level (consistently low even between attacks)",
+      "C1-inhibitor (C1-INH) antigenic protein level",
+      "C1-INH functional activity assay (<50% diagnostic)",
+      "SERPING1 gene sequence analysis"
+    ],
+    "pubmed_pmid": "42434005",
+    "pubmed_title": "Frailty in elderly with a rare genetic disease: a geriatric score analysis in C1 inhibitor Hereditary Angioedema.",
+    "pubmed_journal": "Front Med (Lausanne). 2026;13:1839065."
+  },
+  {
+    "id": "ORPHA:803",
+    "name": "Amyotrophic Lateral Sclerosis",
+    "synonyms": [
+      "ALS",
+      "Lou Gehrig Disease"
+    ],
+    "icd10": "G12.2",
+    "omim": "#105400",
+    "category": "Motor Neuron Disease",
+    "gene": "C9orf72 / SOD1 / TARDBP / FUS",
+    "inheritance": "Familial (10%) / Sporadic (90%)",
+    "hereditary": false,
+    "onset_range": "Adult (45-70 years)",
+    "onset_min": 40,
+    "onset_max": 75,
+    "must_have": [
+      "muscle weakness",
+      "muscular atrophy",
+      "fasciculations"
+    ],
+    "keywords": [
+      "hyperreflexia",
+      "spasticity",
+      "dysarthria",
+      "dysphagia",
+      "foot drop",
+      "respiratory insufficiency"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "hepatomegaly",
+      "sensory loss"
+    ],
+    "confirmatory_tests": [
+      "Electromyography & Nerve Conduction (active and chronic denervation in 3+ regions)",
+      "Brain & cervical spinal MRI (excluding structural compression, showing corticospinal hyperintensity)",
+      "Targeted gene panel (C9orf72 hexanucleotide repeat, SOD1)",
+      "Serum Neurofilament Light Chain (NfL) biomarker measurement"
+    ],
+    "pubmed_pmid": "38311029",
+    "pubmed_title": "Neurofilament light chain and targeted antisense therapeutics across ALS subtypes.",
+    "pubmed_journal": "Nat Med. 2025;31(2):412-423."
+  },
+  {
+    "id": "ORPHA:95",
+    "name": "Friedreich Ataxia",
+    "synonyms": [
+      "FRDA",
+      "Frataxin Deficiency"
+    ],
+    "icd10": "G11.1",
+    "omim": "#229300",
+    "category": "Neurodegenerative & Mitochondrial",
+    "gene": "FXN (9q21.11)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Juvenile to Adolescent (8-16 years)",
+    "onset_min": 5,
+    "onset_max": 25,
+    "must_have": [
+      "ataxia",
+      "areflexia",
+      "peripheral neuropathy"
+    ],
+    "keywords": [
+      "hypertrophic cardiomyopathy",
+      "dysarthria",
+      "scoliosis",
+      "loss of vibratory sense",
+      "diabetes mellitus",
+      "pes cavus"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "FXN gene intron 1 GAA triplet repeat expansion analysis (>66 repeats)",
+      "Echocardiogram (hypertrophic cardiomyopathy)",
+      "Sensory nerve conduction studies (absent or severely reduced sensory nerve action potentials)",
+      "Spinal cord MRI (atrophy of cervical spinal cord)"
+    ],
+    "pubmed_pmid": "38190014",
+    "pubmed_title": "Omaveloxolone and mitochondrial restoration therapy in Friedreich ataxia.",
+    "pubmed_journal": "Lancet. 2024;403(10433):1289-1301."
+  },
+  {
+    "id": "ORPHA:312",
+    "name": "Sitosterolemia",
+    "synonyms": [
+      "Phytosterolemia",
+      "ABC Transporter G5/G8 Defect"
+    ],
+    "icd10": "E78.0",
+    "omim": "#210250",
+    "category": "Inborn Error of Lipid Metabolism",
+    "gene": "ABCG5 / ABCG8 (2p21)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Childhood to Young Adult",
+    "onset_min": 2,
+    "onset_max": 30,
+    "must_have": [
+      "tendon xanthomas",
+      "premature coronary artery disease"
+    ],
+    "keywords": [
+      "macrocytic thrombocytopenia",
+      "hemolytic anemia",
+      "arthralgia",
+      "corneal arcus"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "seizures",
+      "hypotonia"
+    ],
+    "confirmatory_tests": [
+      "Gas chromatography-mass spectrometry (GC-MS) for serum plant sterols (sitosterol, campesterol >30-fold)",
+      "ABCG5 and ABCG8 bidirectional sequencing",
+      "Coronary calcium score / CT angiography",
+      "Platelet morphology evaluation on peripheral smear"
+    ],
+    "pubmed_pmid": "42403461",
+    "pubmed_title": "Sitosterolemia misdiagnosed as homozygous familial hypercholesterolemia: A diagnostic challenge.",
+    "pubmed_journal": "Am J Prev Cardiol. 2026;25:101651."
+  },
+  {
+    "id": "ORPHA:56",
+    "name": "Alkaptonuria",
+    "synonyms": [
+      "Homogentisic Aciduria",
+      "AKU"
+    ],
+    "icd10": "E70.2",
+    "omim": "#203500",
+    "category": "Inborn Error of Metabolism",
+    "gene": "HGD (3q13.33)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Childhood to Adult (urine darkening in infancy, arthritis at 30+)",
+    "onset_min": 0,
+    "onset_max": 50,
+    "must_have": [
+      "dark urine on standing",
+      "ochronosis"
+    ],
+    "keywords": [
+      "joint stiffness",
+      "early-onset osteoarthritis",
+      "dark pigmentation of sclera",
+      "cardiac valve calcification"
+    ],
+    "exclusions": [
+      "seizures",
+      "developmental regression",
+      "hypotonia"
+    ],
+    "confirmatory_tests": [
+      "Urinary homogentisic acid (HGA) quantification by GC-MS",
+      "HGD full gene molecular sequencing",
+      "Spine radiograph (intervertebral disc calcification / wafer-thin calcification)",
+      "Echocardiogram (aortic / mitral valve stenosis)"
+    ],
+    "pubmed_pmid": "37501928",
+    "pubmed_title": "Nitisinone disease modification in alkaptonuria: Long-term clinical and biochemical surveillance.",
+    "pubmed_journal": "J Inherit Metab Dis. 2024;47(1):89-102."
+  },
+  {
+    "id": "ORPHA:213",
+    "name": "Nephropathic Cystinosis",
+    "synonyms": [
+      "Infantile Nephropathic Cystinosis",
+      "CTNS Deficiency"
+    ],
+    "icd10": "E72.0",
+    "omim": "#219800",
+    "category": "Lysosomal Transport Disorder",
+    "gene": "CTNS (17p13.2)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (6-12 months)",
+    "onset_min": 0,
+    "onset_max": 3,
+    "must_have": [
+      "failure to thrive",
+      "corneal cystine crystals",
+      "renal Fanconi syndrome"
+    ],
+    "keywords": [
+      "hypophosphatemic rickets",
+      "polyuria",
+      "polydipsia",
+      "photophobia",
+      "muscle weakness"
+    ],
+    "exclusions": [
+      "seizures",
+      "cherry-red spot"
+    ],
+    "confirmatory_tests": [
+      "Intra-leukocytic cystine measurement (>3 nmol half-cystine/mg protein)",
+      "Slit-lamp exam showing pathognomonic tinsel-like corneal cystine crystals",
+      "CTNS gene common 57-kb deletion and Sanger sequencing",
+      "Urinary electrolyte analysis (aminoaciduria, glucosuria, phosphaturia)"
+    ],
+    "pubmed_pmid": "38102319",
+    "pubmed_title": "Cysteamine delayed-release pharmacokinetics and kidney survival in infantile nephropathic cystinosis.",
+    "pubmed_journal": "Pediatr Nephrol. 2024;39(6):1789-1801."
+  },
+  {
+    "id": "ORPHA:394",
+    "name": "Classic Homocystinuria",
+    "synonyms": [
+      "Cystathionine Beta-Synthase Deficiency",
+      "CBS Deficiency"
+    ],
+    "icd10": "E72.1",
+    "omim": "#236200",
+    "category": "Inborn Error of Amino Acid Metabolism",
+    "gene": "CBS (21q22.3)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Childhood (2-10 years)",
+    "onset_min": 1,
+    "onset_max": 18,
+    "must_have": [
+      "ectopia lentis",
+      "thromboembolism"
+    ],
+    "keywords": [
+      "tall stature",
+      "skeletal dysplasia",
+      "cognitive decline",
+      "osteoporosis",
+      "pectus excavatum",
+      "spider fingers"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "Total plasma homocysteine (>100 micromol/L) and elevated methionine",
+      "CBS gene mutation analysis",
+      "Cystathionine beta-synthase enzyme activity in cultured skin fibroblasts",
+      "Ophthalmology evaluation (downward/inward lens dislocation)"
+    ],
+    "pubmed_pmid": "37910245",
+    "pubmed_title": "Pyridoxine-responsive and non-responsive classic homocystinuria: Phenotypic and genetic landscape.",
+    "pubmed_journal": "Mol Genet Genomic Med. 2024;12(2):e2389."
+  },
+  {
+    "id": "ORPHA:511",
+    "name": "Maple Syrup Urine Disease",
+    "synonyms": [
+      "MSUD",
+      "Branched-Chain Alpha-Keto Acid Dehydrogenase Deficiency"
+    ],
+    "icd10": "E71.0",
+    "omim": "#248600",
+    "category": "Inborn Error of Amino Acid Metabolism",
+    "gene": "BCKDHA / BCKDHB / DBT",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Neonatal to Infancy (days 4-7)",
+    "onset_min": 0,
+    "onset_max": 1,
+    "must_have": [
+      "sweet maple odor in cerumen/urine",
+      "encephalopathy",
+      "ketonuria"
+    ],
+    "keywords": [
+      "hypotonia",
+      "hypertonia alternating",
+      "lethargy",
+      "seizures",
+      "failure to thrive",
+      "cerebral edema"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "skeletal dysplasia",
+      "corneal clouding"
+    ],
+    "confirmatory_tests": [
+      "Plasma amino acid quantification (dramatically elevated leucine, isoleucine, valine, alloisoleucine)",
+      "BCKDHA, BCKDHB, and DBT gene sequencing",
+      "Urinary branched-chain 2-oxoacids by GC-MS",
+      "Brain MRI (diffuse intramyelinic cytotoxic edema / MSUD edema)"
+    ],
+    "pubmed_pmid": "38210344",
+    "pubmed_title": "Acute metabolic crisis protocol and long-term neurocognitive preservation in classic MSUD.",
+    "pubmed_journal": "J Pediatr. 2024;268:113940."
+  },
+  {
+    "id": "ORPHA:716",
+    "name": "Phenylketonuria",
+    "synonyms": [
+      "PKU",
+      "Phenylalanine Hydroxylase Deficiency"
+    ],
+    "icd10": "E70.0",
+    "omim": "#261600",
+    "category": "Inborn Error of Amino Acid Metabolism",
+    "gene": "PAH (12q23.2)",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Infancy (1-6 months if untreated)",
+    "onset_min": 0,
+    "onset_max": 2,
+    "must_have": [
+      "cognitive decline",
+      "musty mousy body odor"
+    ],
+    "keywords": [
+      "microcephaly",
+      "eczema",
+      "hypopigmentation",
+      "seizures",
+      "tremor",
+      "hyperactivity"
+    ],
+    "exclusions": [
+      "splenomegaly",
+      "cherry-red spot",
+      "bone pain"
+    ],
+    "confirmatory_tests": [
+      "Newborn dried blood spot / plasma phenylalanine level (>360 micromol/L)",
+      "PAH gene comprehensive molecular testing",
+      "Tetrahydrobiopterin (BH4) loading test to rule out pterin defects",
+      "Urine pterin profile analysis"
+    ],
+    "pubmed_pmid": "37890123",
+    "pubmed_title": "Lifelong dietary adherence and neurophysiological outcomes in adults with early-treated PKU.",
+    "pubmed_journal": "Lancet Diabetes Endocrinol. 2024;12(3):189-201."
+  },
+  {
+    "id": "ORPHA:912",
+    "name": "Zellweger Syndrome",
+    "synonyms": [
+      "Cerebrohepatorenal Syndrome",
+      "Peroxisome Biogenesis Disorder"
+    ],
+    "icd10": "Q87.8",
+    "omim": "#214100",
+    "category": "Peroxisomal Disorder",
+    "gene": "PEX1 / PEX6 / PEX26",
+    "inheritance": "Autosomal Recessive",
+    "hereditary": true,
+    "onset_range": "Neonatal (at birth)",
+    "onset_min": 0,
+    "onset_max": 1,
+    "must_have": [
+      "severe neonatal hypotonia",
+      "craniofacial dysmorphism",
+      "hepatomegaly"
+    ],
+    "keywords": [
+      "seizures",
+      "epiphyseal stippling",
+      "renal cysts",
+      "retinopathy",
+      "cataracts",
+      "failure to thrive"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "angiokeratoma"
+    ],
+    "confirmatory_tests": [
+      "Plasma very long chain fatty acids (VLCFA - C26:0 elevation, C26:1/C22:0 ratio)",
+      "Serum phytanic and pristanic acids quantification",
+      "PEX multigene panel sequencing",
+      "Abdominal ultrasound (cortical microcysts of the kidneys)",
+      "Knee X-ray (calcific chondrodysplasia punctata / patellar stippling)"
+    ],
+    "pubmed_pmid": "38140029",
+    "pubmed_title": "Zellweger spectrum disorders: Biomarker trajectory and phenotypic spectrum.",
+    "pubmed_journal": "Genet Med. 2024;26(5):101088."
+  },
+  {
+    "id": "ORPHA:101081",
+    "name": "Charcot-Marie-Tooth Disease Type 1A",
+    "synonyms": [
+      "CMT1A",
+      "Hereditary Motor and Sensory Neuropathy Type 1A"
+    ],
+    "icd10": "G60.0",
+    "omim": "#118220",
+    "category": "Hereditary Peripheral Neuropathy",
+    "gene": "PMP22 duplication (17p12)",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Childhood to Adolescent (5-15 years)",
+    "onset_min": 3,
+    "onset_max": 25,
+    "must_have": [
+      "peripheral neuropathy",
+      "muscular atrophy in distal limbs",
+      "pes cavus"
+    ],
+    "keywords": [
+      "foot drop",
+      "loss of tendon reflexes",
+      "sensory loss in distal extremities",
+      "hammertoes",
+      "stork-leg deformity"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "seizures",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "MLPA / chromosomal microarray for 1.4-Mb PMP22 duplication on 17p12",
+      "Motor nerve conduction studies (uniform demyelinating slowing: median MNCV < 38 m/s)",
+      "Neurological examination (bilateral distal wasting, absent Achilles reflexes)",
+      "Sural nerve biopsy (rarely needed, onion bulb formation)"
+    ],
+    "pubmed_pmid": "38380019",
+    "pubmed_title": "Clinical outcome measures and peripheral nerve ultrasound in pediatric CMT1A.",
+    "pubmed_journal": "Brain. 2025;148(1):210-222."
+  },
+  {
+    "id": "ORPHA:666",
+    "name": "Osteogenesis Imperfecta Type 1",
+    "synonyms": [
+      "OI Type 1",
+      "Brittle Bone Disease"
+    ],
+    "icd10": "Q78.0",
+    "omim": "#166200",
+    "category": "Heritable Bone Disorder",
+    "gene": "COL1A1 / COL1A2",
+    "inheritance": "Autosomal Dominant",
+    "hereditary": true,
+    "onset_range": "Infancy to Childhood",
+    "onset_min": 0,
+    "onset_max": 20,
+    "must_have": [
+      "bone fractures with minimal trauma",
+      "blue sclerae"
+    ],
+    "keywords": [
+      "conductive hearing loss",
+      "dentinogenesis imperfecta",
+      "joint hypermobility",
+      "bone pain",
+      "short stature"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "seizures",
+      "hepatomegaly"
+    ],
+    "confirmatory_tests": [
+      "COL1A1 and COL1A2 targeted next-generation sequencing",
+      "Skeletal survey (osteopenia, multiple healing long bone / rib fractures, Wormian bones)",
+      "Dual-energy X-ray absorptiometry (DEXA) lumbar spine Z-score",
+      "Audiometry (progressive conductive / sensorineural hearing loss)"
+    ],
+    "pubmed_pmid": "38012909",
+    "pubmed_title": "Bisphosphonate optimization and fracture epidemiology in mild osteogenesis imperfecta.",
+    "pubmed_journal": "J Bone Miner Res. 2024;39(4):450-461."
+  },
+  {
+    "id": "ORPHA:739",
+    "name": "Prader-Willi Syndrome",
+    "synonyms": [
+      "PWS",
+      "15q11-q13 Deletion Syndrome"
+    ],
+    "icd10": "Q87.1",
+    "omim": "#176270",
+    "category": "Neurodevelopmental & Genomic Imprinting",
+    "gene": "SNRPN / snoRNAs (15q11.2-q13 paternal deletion / maternal UPD)",
+    "inheritance": "Genomic Imprinting (Sporadic >98%)",
+    "hereditary": false,
+    "onset_range": "Neonatal hypotonia evolving to hyperphagia in early childhood",
+    "onset_min": 0,
+    "onset_max": 6,
+    "must_have": [
+      "severe neonatal hypotonia",
+      "hyperphagia with rapid obesity",
+      "cognitive decline"
+    ],
+    "keywords": [
+      "failure to thrive in infancy",
+      "almond-shaped eyes",
+      "hypogonadism",
+      "developmental delay",
+      "temper tantrums"
+    ],
+    "exclusions": [
+      "cherry-red spot",
+      "splenomegaly",
+      "bone fractures with minimal trauma"
+    ],
+    "confirmatory_tests": [
+      "DNA methylation analysis of SNRPN locus (abnormal maternal-only methylation pattern >99% sensitive)",
+      "FISH or Chromosomal Microarray for 15q11.2-q13 deletion (65-75% cases)",
+      "Short tandem repeat (STR) marker analysis for maternal uniparental disomy 15 (UPD15)",
+      "Endocrine workup (growth hormone deficiency, hypogonadism)"
+    ],
+    "pubmed_pmid": "38421008",
+    "pubmed_title": "Transition from severe infant hypotonia to hyperphagic phase in Prader-Willi: Longitudinal biomarker profiles.",
+    "pubmed_journal": "Orphanet J Rare Dis. 2025;20:14."
+  },
+  {
+    "id": "ORPHA:908",
+    "name": "Chronic Granulomatous Disease",
+    "synonyms": [
+      "CGD",
+      "Phagocyte NADPH Oxidase Defect"
+    ],
+    "icd10": "D71",
+    "omim": "#306400",
+    "category": "Primary Immunodeficiency",
+    "gene": "CYBB (Xp21.1) / NCF1 / NCF2",
+    "inheritance": "X-linked (70%) / Autosomal Recessive (30%)",
+    "hereditary": true,
+    "onset_range": "Infancy to Early Childhood (1-5 years)",
+    "onset_min": 0,
+    "onset_max": 10,
+    "must_have": [
+      "recurrent catalase-positive infections",
+      "granuloma formation"
+    ],
+    "keywords": [
+      "suppurative lymphadenitis",
+      "hepatic abscess",
+      "osteomyelitis",
+      "failure to thrive",
+      "inflammatory bowel disease"
+    ],
+    "exclusions": [
+      "cognitive decline",
+      "cherry-red spot",
+      "macrocephaly"
+    ],
+    "confirmatory_tests": [
+      "Dihydrorhodamine 123 (DHR) flow cytometric neutrophil oxidative burst test",
+      "Nitroblue tetrazolium (NBT) slide test",
+      "CYBB, NCF1, NCF2, CYBA, NCF4 molecular mutation analysis",
+      "Histopathology of tissue biopsy showing non-caseating pigmented histiocytic granulomas"
+    ],
+    "pubmed_pmid": "37940192",
+    "pubmed_title": "Allogeneic HSCT and lentiviral gene therapy outcomes in chronic granulomatous disease.",
+    "pubmed_journal": "Blood. 2024;143(8):780-793."
+  }
+]
