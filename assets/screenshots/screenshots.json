@@ -1,0 +1,92 @@
+[
+  {
+    "file": "01-knowledge-base-pubmed.jpeg",
+    "title": "Knowledge Base & PubMed Integration",
+    "desc": "Exploration of 42,549 HPO terms, 30 Orphanet disease profiles, and live NCBI PubMed literature retrieval with 24h caching.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.30 PM (1).jpeg"
+  },
+  {
+    "file": "02-support-contact-form.jpeg",
+    "title": "Clinician Support & Issue Reporting",
+    "desc": "Direct support channel for clinicians to report diagnostic queries, data issues, and system questions.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.30 PM.jpeg"
+  },
+  {
+    "file": "03-settings-security.jpeg",
+    "title": "Security & JWT Session Management",
+    "desc": "bcrypt-hashed credential verification, active JSON Web Token management, and session control.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.31 PM (1).jpeg"
+  },
+  {
+    "file": "04-support-faqs.jpeg",
+    "title": "Help, Documentation & FAQs",
+    "desc": "Comprehensive clinical guides, system startup procedures, and rare disease knowledge base FAQs.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.31 PM.jpeg"
+  },
+  {
+    "file": "05-settings-profile.jpeg",
+    "title": "Clinician Profile & Preferences",
+    "desc": "User credentials, medical department, affiliation details, and clinician dashboard customization.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.33 PM.jpeg"
+  },
+  {
+    "file": "06-dashboard-overview.jpeg",
+    "title": "Main Dashboard & Service Health",
+    "desc": "Real-time status indicators for API Server, PostgreSQL 16, LLaMA 3, and ChromaDB vector store.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.34 PM (1).jpeg"
+  },
+  {
+    "file": "07-case-history.jpeg",
+    "title": "Patient Case History Management",
+    "desc": "Audit trail of analyzed cases with clinical status badges, symptom summaries, and differential reports.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.34 PM.jpeg"
+  },
+  {
+    "file": "08-new-case-demographics.jpeg",
+    "title": "Patient Case Demographics & Onset",
+    "desc": "Intake module capturing age of onset, clinical notes, family history, and disease progression.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.35 PM (1).jpeg"
+  },
+  {
+    "file": "09-new-case-symptom-selector.jpeg",
+    "title": "Categorized Symptom Selector",
+    "desc": "Hierarchical symptom selector covering neurological, muscular, hepatic, and metabolic phenotypes.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.35 PM.jpeg"
+  },
+  {
+    "file": "10-agents-monitoring.jpeg",
+    "title": "Multi-Agent MDT Specialist Roster",
+    "desc": "Live monitoring of the 6 specialist AI agents: GP, Neurologist, Geneticist, Radiologist, Immunologist, and Meta-Agent.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.36 PM (1).jpeg"
+  },
+  {
+    "file": "11-agents-performance.jpeg",
+    "title": "Specialist Agent Weighting & Workload",
+    "desc": "Agent specialty weights (1.0x to 1.5x), compute load, active status, and consensus contributions.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.36 PM (2).jpeg"
+  },
+  {
+    "file": "12-settings-notifications.jpeg",
+    "title": "Real-Time Alert Preferences",
+    "desc": "Configurable notifications for new case submissions, low consensus alerts (<60%), and agent transitions.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.36 PM.jpeg"
+  },
+  {
+    "file": "13-settings-system-architecture.jpeg",
+    "title": "System Architecture & Local HIPAA Compliance",
+    "desc": "Technical specifications: React 18, FastAPI, PostgreSQL 16, ChromaDB, LLaMA 3, and 100% on-premise privacy.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.37 PM (1).jpeg"
+  },
+  {
+    "file": "14-analytics-agent-intelligence.jpeg",
+    "title": "Agent Intelligence & Performance Analytics",
+    "desc": "Per-agent diagnostic accuracy, latency distribution, and consensus tracking from the agent_outputs table.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.37 PM (2).jpeg"
+  },
+  {
+    "file": "15-analytics-diagnostic-trends.jpeg",
+    "title": "Diagnostic Trends & Disease Distribution",
+    "desc": "System-wide Top-5 accuracy (87.2%), case volume trends, and rare disease classification statistics.",
+    "orig": "WhatsApp Image 2026-11-22 at 1.19.37 PM.jpeg"
+  }
+]
