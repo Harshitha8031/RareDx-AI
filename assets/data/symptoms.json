@@ -1,0 +1,523 @@
+[
+  {
+    "name": "Neurological",
+    "icon": "brain",
+    "symptoms": [
+      {
+        "id": "s_seizures",
+        "label": "Seizures / Convulsions",
+        "canonical": "seizures",
+        "hpo": "HP:0001250",
+        "synonyms": [
+          "fits",
+          "convulsions",
+          "epilepsy",
+          "seizure"
+        ]
+      },
+      {
+        "id": "s_hypotonia",
+        "label": "Hypotonia (Floppy Infant)",
+        "canonical": "hypotonia",
+        "hpo": "HP:0001252",
+        "synonyms": [
+          "low muscle tone",
+          "floppiness",
+          "flaccidity",
+          "hypotonic"
+        ]
+      },
+      {
+        "id": "s_spasticity",
+        "label": "Spasticity / Hypertonia",
+        "canonical": "spasticity",
+        "hpo": "HP:0001257",
+        "synonyms": [
+          "stiffness",
+          "rigidity",
+          "increased tone",
+          "hypertonia"
+        ]
+      },
+      {
+        "id": "s_ataxia",
+        "label": "Ataxia / Coordination Loss",
+        "canonical": "ataxia",
+        "hpo": "HP:0001251",
+        "synonyms": [
+          "unsteadiness",
+          "clumsiness",
+          "gait unsteadiness",
+          "incoordination"
+        ]
+      },
+      {
+        "id": "s_cognitive_decline",
+        "label": "Cognitive Decline / Intellectual Deficit",
+        "canonical": "cognitive decline",
+        "hpo": "HP:0001268",
+        "synonyms": [
+          "mental decline",
+          "dementia",
+          "cognitive impairment",
+          "memory loss"
+        ]
+      },
+      {
+        "id": "s_dev_regression",
+        "label": "Developmental Regression",
+        "canonical": "developmental regression",
+        "hpo": "HP:0002376",
+        "synonyms": [
+          "loss of milestones",
+          "developmental delay",
+          "regression",
+          "lost walking"
+        ]
+      },
+      {
+        "id": "s_neuropathy",
+        "label": "Peripheral Neuropathy",
+        "canonical": "peripheral neuropathy",
+        "hpo": "HP:0009830",
+        "synonyms": [
+          "numbness",
+          "tingling",
+          "nerve damage",
+          "paresthesia"
+        ]
+      },
+      {
+        "id": "s_macrocephaly",
+        "label": "Macrocephaly (Enlarged Head)",
+        "canonical": "macrocephaly",
+        "hpo": "HP:0000256",
+        "synonyms": [
+          "large head",
+          "big head",
+          "head circumference enlarged"
+        ]
+      },
+      {
+        "id": "s_chorea",
+        "label": "Chorea / Involuntary Movements",
+        "canonical": "chorea",
+        "hpo": "HP:0002072",
+        "synonyms": [
+          "jerking",
+          "dance-like movements",
+          "involuntary twitching"
+        ]
+      },
+      {
+        "id": "s_dysarthria",
+        "label": "Dysarthria / Slurred Speech",
+        "canonical": "dysarthria",
+        "hpo": "HP:0001260",
+        "synonyms": [
+          "speech difficulty",
+          "slurring",
+          "impaired articulation"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Muscular",
+    "icon": "activity",
+    "symptoms": [
+      {
+        "id": "s_weakness",
+        "label": "Muscle Weakness",
+        "canonical": "muscle weakness",
+        "hpo": "HP:0001324",
+        "synonyms": [
+          "weakness",
+          "loss of muscle strength",
+          "paresis",
+          "motor weakness"
+        ]
+      },
+      {
+        "id": "s_atrophy",
+        "label": "Muscular Atrophy",
+        "canonical": "muscular atrophy",
+        "hpo": "HP:0003202",
+        "synonyms": [
+          "muscle wasting",
+          "muscle loss",
+          "atrophy",
+          "thinning limbs"
+        ]
+      },
+      {
+        "id": "s_fasciculations",
+        "label": "Fasciculations (Twitching)",
+        "canonical": "fasciculations",
+        "hpo": "HP:0002380",
+        "synonyms": [
+          "muscle twitches",
+          "tongue twitching",
+          "fasciculation"
+        ]
+      },
+      {
+        "id": "s_fatigue",
+        "label": "Chronic Fatigue / Intolerance",
+        "canonical": "fatigue",
+        "hpo": "HP:0012378",
+        "synonyms": [
+          "exhaustion",
+          "tiredness",
+          "exercise intolerance",
+          "lethargy"
+        ]
+      },
+      {
+        "id": "s_areflexia",
+        "label": "Areflexia / Absent Reflexes",
+        "canonical": "areflexia",
+        "hpo": "HP:0001284",
+        "synonyms": [
+          "absent tendon jerks",
+          "loss of deep reflexes",
+          "hyporeflexia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hepatic & Splenic",
+    "icon": "shield",
+    "symptoms": [
+      {
+        "id": "s_hepatomegaly",
+        "label": "Hepatomegaly (Liver Enlargement)",
+        "canonical": "hepatomegaly",
+        "hpo": "HP:0002240",
+        "synonyms": [
+          "enlarged liver",
+          "swollen liver",
+          "hepatic swelling"
+        ]
+      },
+      {
+        "id": "s_splenomegaly",
+        "label": "Splenomegaly (Spleen Enlargement)",
+        "canonical": "splenomegaly",
+        "hpo": "HP:0001744",
+        "synonyms": [
+          "enlarged spleen",
+          "swollen spleen"
+        ]
+      },
+      {
+        "id": "s_jaundice",
+        "label": "Jaundice (Hyperbilirubinemia)",
+        "canonical": "jaundice",
+        "hpo": "HP:0000952",
+        "synonyms": [
+          "yellow skin",
+          "yellow eyes",
+          "icterus"
+        ]
+      },
+      {
+        "id": "s_cirrhosis",
+        "label": "Cirrhosis / Liver Fibrosis",
+        "canonical": "cirrhosis",
+        "hpo": "HP:0001394",
+        "synonyms": [
+          "hepatic failure",
+          "liver scarring",
+          "cirrhotic"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Metabolic & Systemic",
+    "icon": "zap",
+    "symptoms": [
+      {
+        "id": "s_ftt",
+        "label": "Failure to Thrive",
+        "canonical": "failure to thrive",
+        "hpo": "HP:0001508",
+        "synonyms": [
+          "poor weight gain",
+          "growth failure",
+          "weight loss",
+          "underweight"
+        ]
+      },
+      {
+        "id": "s_acidosis",
+        "label": "Metabolic Acidosis / Ketonuria",
+        "canonical": "ketonuria",
+        "hpo": "HP:0001947",
+        "synonyms": [
+          "acidosis",
+          "ketones in urine",
+          "high anion gap"
+        ]
+      },
+      {
+        "id": "s_resp_distress",
+        "label": "Respiratory Distress / Insufficiency",
+        "canonical": "respiratory distress",
+        "hpo": "HP:0002098",
+        "synonyms": [
+          "breathing difficulty",
+          "shortness of breath",
+          "dyspnea",
+          "ventilatory failure"
+        ]
+      },
+      {
+        "id": "s_cardiomegaly",
+        "label": "Cardiomegaly / Hypertrophic Heart",
+        "canonical": "cardiomegaly",
+        "hpo": "HP:0001640",
+        "synonyms": [
+          "enlarged heart",
+          "ventricular hypertrophy",
+          "cardiac dilation"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ocular (Eye Signs)",
+    "icon": "eye",
+    "symptoms": [
+      {
+        "id": "s_cherry_red",
+        "label": "Macular Cherry-Red Spot",
+        "canonical": "cherry-red spot",
+        "hpo": "HP:0010729",
+        "synonyms": [
+          "cherry red spot",
+          "retinal spot",
+          "macular cherry spot"
+        ]
+      },
+      {
+        "id": "s_kf_rings",
+        "label": "Kayser-Fleischer Rings",
+        "canonical": "kayser-fleischer rings",
+        "hpo": "HP:0000562",
+        "synonyms": [
+          "copper corneal rings",
+          "corneal rings",
+          "descemet copper ring"
+        ]
+      },
+      {
+        "id": "s_optic_atrophy",
+        "label": "Optic Atrophy",
+        "canonical": "optic atrophy",
+        "hpo": "HP:0000648",
+        "synonyms": [
+          "optic nerve pallor",
+          "pale optic disc",
+          "nerve atrophy"
+        ]
+      },
+      {
+        "id": "s_corneal_clouding",
+        "label": "Corneal Clouding / Haze",
+        "canonical": "corneal clouding",
+        "hpo": "HP:0007957",
+        "synonyms": [
+          "cloudy cornea",
+          "cornea verticillata",
+          "hazy eyes"
+        ]
+      },
+      {
+        "id": "s_ectopia_lentis",
+        "label": "Ectopia Lentis (Dislocated Lens)",
+        "canonical": "ectopia lentis",
+        "hpo": "HP:0001083",
+        "synonyms": [
+          "lens subluxation",
+          "dislocated lens",
+          "loose lenses"
+        ]
+      },
+      {
+        "id": "s_blue_sclerae",
+        "label": "Blue Sclerae",
+        "canonical": "blue sclerae",
+        "hpo": "HP:0000592",
+        "synonyms": [
+          "blue eye whites",
+          "thin sclerae"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dermatological (Skin)",
+    "icon": "droplet",
+    "symptoms": [
+      {
+        "id": "s_angiokeratoma",
+        "label": "Angiokeratoma (Dark Red Skin Lesions)",
+        "canonical": "angiokeratoma",
+        "hpo": "HP:0001014",
+        "synonyms": [
+          "vascular skin spots",
+          "red papules",
+          "keratomas"
+        ]
+      },
+      {
+        "id": "s_hyperextensible",
+        "label": "Skin Hyperelasticity / Fragility",
+        "canonical": "skin hyperelasticity",
+        "hpo": "HP:0000974",
+        "synonyms": [
+          "stretchy skin",
+          "fragile skin",
+          "skin hyperextensibility"
+        ]
+      },
+      {
+        "id": "s_bruising",
+        "label": "Easy Bruising / Petechiae",
+        "canonical": "bruising",
+        "hpo": "HP:0000978",
+        "synonyms": [
+          "purpura",
+          "ecchymoses",
+          "hematomas"
+        ]
+      },
+      {
+        "id": "s_telangiectasia",
+        "label": "Oculocutaneous Telangiectasia",
+        "canonical": "oculocutaneous telangiectasia",
+        "hpo": "HP:0000965",
+        "synonyms": [
+          "spider veins",
+          "capillary dilation",
+          "telangiectasias"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Skeletal & Connective",
+    "icon": "disc",
+    "symptoms": [
+      {
+        "id": "s_coarse_face",
+        "label": "Coarse Facial Features",
+        "canonical": "coarse facial features",
+        "hpo": "HP:0000280",
+        "synonyms": [
+          "rough facies",
+          "thick eyebrows",
+          "flat nasal bridge",
+          "facial coarsening"
+        ]
+      },
+      {
+        "id": "s_hypermobility",
+        "label": "Joint Hypermobility (Beighton >=5)",
+        "canonical": "joint hypermobility",
+        "hpo": "HP:0001382",
+        "synonyms": [
+          "double jointed",
+          "loose joints",
+          "hyperextensible joints"
+        ]
+      },
+      {
+        "id": "s_bone_pain",
+        "label": "Bone Pain / Bone Crises",
+        "canonical": "bone pain",
+        "hpo": "HP:0002653",
+        "synonyms": [
+          "skeletal pain",
+          "deep bone aching",
+          "bone crises"
+        ]
+      },
+      {
+        "id": "s_fractures",
+        "label": "Recurrent Bone Fractures (Minimal Trauma)",
+        "canonical": "bone fractures with minimal trauma",
+        "hpo": "HP:0002757",
+        "synonyms": [
+          "brittle bones",
+          "frequent breaks",
+          "osteogenesis"
+        ]
+      },
+      {
+        "id": "s_arachnodactyly",
+        "label": "Arachnodactyly (Spider Fingers)",
+        "canonical": "arachnodactyly",
+        "hpo": "HP:0001166",
+        "synonyms": [
+          "long fingers",
+          "spider hands",
+          "slender digits"
+        ]
+      },
+      {
+        "id": "s_tall_stature",
+        "label": "Tall Slender Stature / Marfanoid",
+        "canonical": "tall stature",
+        "hpo": "HP:0000098",
+        "synonyms": [
+          "marfanoid habitus",
+          "excessive height",
+          "long arm span"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Immunological & Swelling",
+    "icon": "heart",
+    "symptoms": [
+      {
+        "id": "s_angioedema",
+        "label": "Recurrent Angioedema (Non-itchy Swelling)",
+        "canonical": "recurrent angioedema",
+        "hpo": "HP:0001061",
+        "synonyms": [
+          "swelling attacks",
+          "subcutaneous edema",
+          "facial edema"
+        ]
+      },
+      {
+        "id": "s_abdo_attacks",
+        "label": "Abdominal Pain Attacks",
+        "canonical": "abdominal pain attacks",
+        "hpo": "HP:0002574",
+        "synonyms": [
+          "colic pain",
+          "gut edema",
+          "cramping attacks"
+        ]
+      },
+      {
+        "id": "s_recurrent_inf",
+        "label": "Recurrent Deep Infections / Granulomas",
+        "canonical": "recurrent catalase-positive infections",
+        "hpo": "HP:0002718",
+        "synonyms": [
+          "frequent abscesses",
+          "chronic infections",
+          "suppurative lymph nodes"
+        ]
+      }
+    ]
+  }
+]
