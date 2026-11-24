@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RareDx AI — Multi-Agent MDT Rare Disease Diagnostic Odyssey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Status Badges */
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-approved {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge-pending {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP GLOBAL NAVBAR
+       ======================================================================== -->
+  <header class="top-navbar">
+    <div class="nav-left-group">
+      <!-- Mobile Sidebar Toggle -->
+      <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="Toggle Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <div class="brand-wrapper" onclick="location.reload()">
+        <div class="brand-logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-title-group">
+          <h1>RareDx AI <span style="font-size:0.75rem; font-weight:600; color:var(--text-highlight); border:1px solid rgba(14,165,233,0.3); padding:1px 6px; border-radius:4px;">v2.1</span></h1>
+          <p>Multi-Agent MDT Clinical Decision Support</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Mode Switcher (3 Modes: Clinical App, Academic Showcase, Viva Presentation) -->
+    <div class="nav-center-tabs">
+      <button class="mode-toggle-btn active" data-mode="app" title="Clinical Decision Support Platform">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Clinical App</span>
+      </button>
+      <button class="mode-toggle-btn" data-mode="academic" title="Academic Thesis & 5-Stage Methodology">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span>Academic Showcase</span>
+      </button>
+      <button class="mode-toggle-btn" data-mode="viva" title="Interactive Viva / Defense Presentation Slides">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>Viva Slides</span>
+      </button>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="nav-actions">
+      <!-- Quick Demo Launcher -->
+      <button id="quick-demo-btn" class="quick-demo-pill" title="Run 1-Click Simulated Clinical Case Demo">
+        <span class="sparkle-icon">✨</span>
+        <span>Run Demo</span>
+      </button>
+
+      <!-- Audio Effects Toggle -->
+      <button id="audio-toggle-btn" class="nav-icon-btn" title="Toggle Clinical Sound Effects (Audio Telemetry)">
+        <svg id="audio-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        <svg id="audio-icon-off" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+      </button>
+
+      <!-- Theme Switcher (Dark / Light) -->
+      <button id="theme-toggle-btn" class="nav-icon-btn" title="Toggle Light / Dark Clinical Theme">
+        <svg id="theme-icon-sun" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <span class="college-pill">ATMECE • VTU CSE(DS)</span>
+      <div class="badge-pulse">
+        <span class="pulse-dot"></span>
+        <span>Local LLaMA 3 Ready</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MODE 1: CLINICAL WEB APPLICATION SHELL
+       ======================================================================== -->
+  <div id="app-shell-container" class="app-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Main Menu</div>
+          <button class="nav-item-btn active" data-tab="dashboard">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+              Dashboard
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="new-case">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              New Case
+            </span>
+            <span style="font-size:0.7rem; color:var(--text-highlight); background:rgba(14,165,233,0.15); padding:1px 6px; border-radius:4px;">AI Run</span>
+          </button>
+          <button class="nav-item-btn" data-tab="pipeline">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Analysis Pipeline
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="review">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Diagnostic Review
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="history">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Case History
+            </span>
+          </button>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Intelligence</div>
+          <button class="nav-item-btn" data-tab="agents">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              AI Agents (6)
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="knowledge">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              Knowledge Base
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="analytics">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Analytics
+            </span>
+          </button>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">System</div>
+          <button class="nav-item-btn" data-tab="support">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Support & FAQs
+            </span>
+          </button>
+          <button class="nav-item-btn" data-tab="settings">
+            <span class="nav-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Settings
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom System Status & User Profile -->
+      <div>
+        <div class="sidebar-status-box">
+          <h4>
+            <span>System Status</span>
+            <span style="color:var(--emerald); font-size:0.65rem;">HEALTHY</span>
+          </h4>
+          <div class="status-row">
+            <span><span class="status-dot-green"></span>FastAPI Server</span>
+            <span class="status-val">Online (12ms)</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot-green"></span>PostgreSQL 16</span>
+            <span class="status-val">Online (4ms)</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot-green"></span>LLaMA 3 (Ollama)</span>
+            <span class="status-val">Online (28ms)</span>
+          </div>
+          <div class="status-row">
+            <span><span class="status-dot-green"></span>ChromaDB Vector</span>
+            <span class="status-val">Online (8ms)</span>
+          </div>
+        </div>
+
+        <div class="clinician-profile-card">
+          <div class="clinician-avatar">HG</div>
+          <div class="clinician-meta">
+            <h4>Harshitha G</h4>
+            <p>Clinician • CSE(DS)</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN APP VIEWS CONTAINER -->
+    <main class="app-main-content">
+      
+      <!-- ==================== VIEW: DASHBOARD ==================== -->
+      <section id="view-dashboard" class="app-view-section">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Clinical MDT Dashboard</h2>
+            <p>Welcome back, Clinician. Local AI decision support operational with 30 Orphanet rare disease profiles.</p>
+          </div>
+          <div class="view-actions">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\'new-case\']').click()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              + New Case Analysis
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="grid-cards-4">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>System Accuracy</span>
+              <div class="icon-wrap">🎯</div>
+            </div>
+            <div class="metric-value">87.2%</div>
+            <div class="metric-footer">Top-5 differential accuracy across 50 test scenarios</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>Cases Resolved</span>
+              <div class="icon-wrap">📋</div>
+            </div>
+            <div class="metric-value">50 / 50</div>
+            <div class="metric-footer">Zero external cloud data transmission (100% Local)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>Avg Analysis Time</span>
+              <div class="icon-wrap">⚡</div>
+            </div>
+            <div class="metric-value">1.84 s</div>
+            <div class="metric-footer">Parallel multi-agent round execution</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>Consensus Rate</span>
+              <div class="icon-wrap">🤝</div>
+            </div>
+            <div class="metric-value">94.0%</div>
+            <div class="metric-footer">Two-round discussion + Meta-Agent arbitration</div>
+          </div>
+        </div>
+
+        <!-- Recent Cases Table -->
+        <div class="intake-card" style="margin-bottom: 2rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h3>Recent Patient Case Analyses</h3>
+            <span style="font-size:0.75rem; color:var(--text-dim);">Live records from PostgreSQL database</span>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Case ID</th>
+                  <th>Patient Case Title</th>
+                  <th>Key Phenotypes</th>
+                  <th>Date</th>
+                  <th>Approval Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="dashboard-recent-cases-tbody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- System Architecture Highlights -->
+        <div class="preset-banner" style="margin-bottom: 0;">
+          <div>
+            <h4>Local Privacy-Preserving Clinical Decision Support</h4>
+            <p>RareDx AI operates completely on-device. Patient notes, HPO codes, and multi-agent debate tokens never leave the local environment.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="document.querySelector('[data-tab=\'settings\']').click()">
+            View System Architecture →
+          </button>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: NEW CASE INTAKE ==================== -->
+      <section id="view-new-case" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Patient Case Intake Module</h2>
+            <p>Enter patient demographics, onset characteristics, clinical notes, and select observed phenotypes.</p>
+          </div>
+          <div class="view-actions">
+            <button id="run-analysis-btn" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Run MDT AI Analysis
+            </button>
+          </div>
+        </div>
+
+        <!-- Presets Banner -->
+        <div class="preset-banner">
+          <div class="preset-title-wrap">
+            <h4>Quick Benchmark Presets</h4>
+            <p>Select any benchmark clinical case from the evaluation suite to auto-fill the intake module:</p>
+          </div>
+          <div id="presets-pills-wrap" class="preset-buttons">
+            <!-- Buttons injected via JS -->
+          </div>
+        </div>
+
+        <!-- Grid: Left Input vs Right Symptoms -->
+        <div class="case-intake-grid">
+          
+          <!-- Left Column: Patient Context & Notes -->
+          <div class="intake-card">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Patient Demographics & Clinical Notes
+            </h3>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Age Group / Onset Age (Years)</label>
+                <input type="number" step="0.1" id="intake-onset-age" class="form-input" value="0.5" placeholder="e.g. 0.5 (6 months)">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Biological Sex</label>
+                <select id="intake-sex" class="form-select">
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Disease Progression</label>
+                <select id="intake-progression" class="form-select">
+                  <option value="slowly progressive">Slowly Progressive</option>
+                  <option value="subacute">Subacute / Episodic</option>
+                  <option value="rapidly progressive">Rapidly Progressive</option>
+                  <option value="chronic">Chronic Stable</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Positive Family History</label>
+                <select id="intake-fam-history" class="form-select">
+                  <option value="true">Yes (Hereditary / Consanguinity)</option>
+                  <option value="false">No / Unknown</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Physician Free-Text Clinical Notes (Live NLP Enabled)</label>
+              <textarea id="clinical-notes-input" class="form-textarea" placeholder="Type or paste doctor's notes here (e.g. 'Patient presented at 6 months with seizures, marked hypotonia, no hepatomegaly, denies bone pain, and negative for cherry-red spot...'). The NLP engine automatically detects negations, synonyms, and temporal cues."></textarea>
+            </div>
+
+            <!-- Live NLP Output Box -->
+            <div class="nlp-feedback-box">
+              <div class="nlp-feedback-header">
+                <span>Natural Language Processing Pipeline Feedback</span>
+                <span style="font-size:0.65rem; color:var(--text-dim);">spaCy + Negation Filter</span>
+              </div>
+              <div id="nlp-tags-row" class="nlp-tags-row">
+                <span style="font-size:0.72rem; color:var(--text-dim);">Type clinical notes above to trigger real-time feature extraction.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Hierarchical Symptom Selector -->
+          <div class="intake-card">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Symptom Selector by Body System
+            </h3>
+
+            <!-- Category Tabs -->
+            <div id="symptom-category-tabs" class="symptom-category-tabs">
+              <!-- Injected via JS -->
+            </div>
+
+            <!-- Checkbox Grid -->
+            <div id="symptoms-checkbox-grid" class="symptoms-checkbox-grid">
+              <!-- Injected via JS -->
+            </div>
+
+            <!-- Selected Symptoms Tray -->
+            <div class="selected-symptoms-tray">
+              <div class="selected-tray-header">
+                <span>Selected Clinical Phenotypes</span>
+                <span id="selected-count-badge" class="badge-pulse" style="font-size:0.7rem;">0 Selected</span>
+              </div>
+              <div id="selected-pills-wrap" class="selected-pills-wrap">
+                <!-- Pills injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: ANALYSIS PIPELINE ==================== -->
+      <section id="view-pipeline" class="app-view-section hidden">
+        <div class="pipeline-view-container">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Multi-Agent MDT Discussion Pipeline</h2>
+              <p>Simulating 6 specialist clinical agents with consensus evaluation and weighted decision fusion.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\'review\']').click()">
+                Proceed to Review & Report →
+              </button>
+            </div>
+          </div>
+
+          <!-- Pipeline Stepper -->
+          <div class="pipeline-stepper">
+            <div id="step-1" class="step-node active completed">
+              <div class="step-circle">1</div>
+              <span class="step-label">NLP & HPO</span>
+            </div>
+            <div id="step-2" class="step-node active completed">
+              <div class="step-circle">2</div>
+              <span class="step-label">Retrieval</span>
+            </div>
+            <div id="step-3" class="step-node active completed">
+              <div class="step-circle">3</div>
+              <span class="step-label">Round 1 (MDT)</span>
+            </div>
+            <div id="step-4" class="step-node active completed">
+              <div class="step-circle">4</div>
+              <span class="step-label">Consensus Check</span>
+            </div>
+            <div id="step-5" class="step-node active completed">
+              <div class="step-circle">5</div>
+              <span class="step-label">Decision Fusion</span>
+            </div>
+          </div>
+
+          <!-- Consensus Meter -->
+          <div class="consensus-card">
+            <div class="consensus-info">
+              <h4>Consensus Evaluation: Plurality Agreement</h4>
+              <p>Specialist convergence threshold: 60%. Round 2 cross-agent peer revision applied.</p>
+            </div>
+            <div class="consensus-meter-wrap">
+              <div class="progress-bar-outer">
+                <div id="consensus-progress-fill" class="progress-bar-inner" style="width: 94%;"></div>
+              </div>
+              <span id="consensus-pct-val" class="consensus-pct">94%</span>
+            </div>
+          </div>
+
+          <!-- Live Agents Grid -->
+          <div id="pipeline-agents-live-grid" class="agents-live-grid">
+            <!-- Agent live debate cards injected via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: DIAGNOSTIC REVIEW & REPORT ==================== -->
+      <section id="view-review" class="app-view-section hidden">
+        <div class="review-report-container">
+          
+          <!-- Banner Header -->
+          <div class="report-header-banner">
+            <div class="report-meta-left">
+              <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                RareDx Diagnostic Analysis Report: <span id="review-case-id" style="font-family:var(--font-mono); color:var(--text-highlight);">RDX-1787137336076</span>
+              </h3>
+              <p>Generated on <span id="review-date">19 August 2026</span> • Clinician: Dr. Harshitha G • Two Discussion Rounds Completed</p>
+            </div>
+            <span id="review-status-pill" class="badge-status badge-pending">Pending Approval</span>
+          </div>
+
+          <!-- Primary Diagnosis Hero Box -->
+          <div class="primary-diagnosis-hero">
+            <div>
+              <span class="primary-badge">PRIMARY DIAGNOSIS</span>
+              <div id="primary-disease-name" class="primary-disease-name">Krabbe Disease</div>
+              <div id="primary-disease-codes" class="primary-disease-codes">
+                <span>ORPHA:487</span> • <span>ICD-10: E75.2</span> • <span>OMIM: #245200</span> • <span>Gene: GALC</span>
+              </div>
+            </div>
+            <div class="confidence-gauge-box">
+              <div id="primary-confidence-val" class="confidence-val-big">99%</div>
+              <div class="confidence-label">AI Consensus Confidence</div>
+            </div>
+          </div>
+
+          <!-- Top 5 Differentials -->
+          <div class="differentials-card">
+            <h4>
+              <span>Top-5 Differential Diagnoses</span>
+              <span style="font-size:0.75rem; color:var(--text-dim); font-weight:normal;">Rank-based discount formula applied</span>
+            </h4>
+            <div id="differentials-list-wrap" class="diff-list">
+              <!-- Differential rows injected via JS -->
+            </div>
+          </div>
+
+          <!-- Recommended Confirmatory Tests -->
+          <div class="intake-card" style="margin-bottom: 1.75rem;">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Recommended Confirmatory Clinical Tests
+            </h3>
+            <div id="confirmatory-tests-grid" class="tests-grid">
+              <!-- Tests injected via JS -->
+            </div>
+          </div>
+
+          <!-- Specialist Findings Summary -->
+          <div class="intake-card" style="margin-bottom: 1.75rem;">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Specialist AI Agent Consultation Transcripts
+            </h3>
+            <div id="agent-findings-review-wrap">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Action Bar -->
+          <div class="review-actions-bar">
+            <div style="font-size:0.8rem; color:var(--text-dim);">
+              <strong>Clinical Disclaimer:</strong> RareDx AI is a clinical decision support tool. All diagnoses must be confirmed by qualified medical professionals.
+            </div>
+            <div style="display:flex; gap:0.75rem;">
+              <button id="approve-diagnosis-btn" class="btn btn-success">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Approve Diagnosis
+              </button>
+              <button id="print-report-btn" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print / Download PDF Report
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: CASE HISTORY ==================== -->
+      <section id="view-history" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Patient Case History</h2>
+            <p>Complete historical registry of analyzed clinical cases and clinician audit trails.</p>
+          </div>
+        </div>
+
+        <div class="intake-card">
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Case Identifier</th>
+                  <th>Clinical Case Title</th>
+                  <th>Onset Age</th>
+                  <th>Observed Phenotypes</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-tbody">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: AI AGENTS ==================== -->
+      <section id="view-agents" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Multi-Disciplinary Team (MDT) Specialist Agents</h2>
+            <p>Six specialized clinical reasoning agents powered by LLaMA 3, each operating with distinct domain weighting.</p>
+          </div>
+        </div>
+
+        <div id="agents-page-grid" class="grid-cards-4" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: KNOWLEDGE BASE ==================== -->
+      <section id="view-knowledge" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Rare Disease Knowledge Base</h2>
+            <p>30 curated Orphanet disease profiles, 42,549 HPO phenotype terms, and live PubMed literature references.</p>
+          </div>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="intake-card" style="margin-bottom: 1.5rem; padding: 1rem 1.25rem;">
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <div style="flex:1; min-width:260px;">
+              <input type="text" id="kb-search-input" class="form-input" placeholder="Search by disease name, ORPHA code, or symptom...">
+            </div>
+            <div style="width:240px;">
+              <select id="kb-category-select" class="form-select">
+                <option value="all">All Categories</option>
+                <option value="Leukodystrophy & Neurodegenerative">Leukodystrophy & Neurodegenerative</option>
+                <option value="Lysosomal Storage Disease">Lysosomal Storage Disease</option>
+                <option value="Inborn Error of Metabolism">Inborn Error of Metabolism</option>
+                <option value="Heritable Connective Tissue Disorder">Heritable Connective Tissue Disorder</option>
+                <option value="Motor Neuron Disease">Motor Neuron Disease</option>
+                <option value="Immunological & Complement Disorder">Immunological & Complement Disorder</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseases Grid -->
+        <div id="knowledge-diseases-grid" class="grid-cards-4" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: ANALYTICS ==================== -->
+      <section id="view-analytics" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>System Diagnostics & Performance Analytics</h2>
+            <p>Real-time analytics evaluated across 50 synthetic clinical scenarios and 30 rare disease profiles.</p>
+          </div>
+        </div>
+
+        <div class="grid-cards-4">
+          <div class="metric-card">
+            <div class="metric-header"><span>Top-1 Accuracy</span><div class="icon-wrap">1️⃣</div></div>
+            <div class="metric-value">72.4%</div>
+            <div class="metric-footer">Correct primary diagnosis on rank 1</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header"><span>Top-3 Accuracy</span><div class="icon-wrap">3️⃣</div></div>
+            <div class="metric-value">81.6%</div>
+            <div class="metric-footer">Included in top 3 differential</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header"><span>Top-5 Accuracy</span><div class="icon-wrap">5️⃣</div></div>
+            <div class="metric-value">87.2%</div>
+            <div class="metric-footer">Benchmark accuracy across all 50 cases</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header"><span>Negation Precision</span><div class="icon-wrap">🛡️</div></div>
+            <div class="metric-value">96.8%</div>
+            <div class="metric-footer">Three-token window negation filter</div>
+          </div>
+        </div>
+
+        <!-- Interactive Graphical Visualization Charts -->
+        <div class="case-intake-grid" style="margin-bottom: 2rem;">
+          <!-- Chart 1: Accuracy by Category -->
+          <div class="intake-card">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Top-5 Diagnostic Accuracy by Disease Category
+            </h3>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:1rem;">Evaluated against 50 synthetic clinical validation cases across 6 medical domains.</p>
+            <div class="bar-chart-container">
+              <div class="chart-bar-group">
+                <div class="chart-bar-label">Leukodystrophy (12 cases)</div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill" style="width: 91.7%; background: linear-gradient(90deg, var(--primary), #38bdf8);">
+                    <span>91.7%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-label">Lysosomal Storage (14 cases)</div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill" style="width: 88.5%; background: linear-gradient(90deg, #8b5cf6, #c084fc);">
+                    <span>88.5%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-label">Inborn Errors of Metabolism (10 cases)</div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill" style="width: 85.0%; background: linear-gradient(90deg, #10b981, #34d399);">
+                    <span>85.0%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-label">Connective Tissue & Bone (8 cases)</div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill" style="width: 87.5%; background: linear-gradient(90deg, #f59e0b, #fbbf24);">
+                    <span>87.5%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-label">Motor Neuron & Neuromuscular (6 cases)</div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill" style="width: 83.3%; background: linear-gradient(90deg, #ec4899, #f472b6);">
+                    <span>83.3%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart 2: MDT Consensus Distribution -->
+          <div class="intake-card">
+            <h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+              Multi-Agent MDT Consensus Agreement Distribution
+            </h3>
+            <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:1rem;">Distribution of agreement reached during two-round multi-agent consultation.</p>
+            <div style="display:flex; flex-direction:column; gap:1.25rem;">
+              <div class="consensus-segment-row">
+                <div class="segment-meta">
+                  <span class="segment-indicator" style="background:#10b981;"></span>
+                  <strong>Round 1 Unanimous Agreement (&gt;85%)</strong>
+                  <span class="segment-pct">42% (21 Cases)</span>
+                </div>
+                <div class="segment-bar"><div style="width:42%; background:#10b981; height:8px; border-radius:4px;"></div></div>
+              </div>
+              <div class="consensus-segment-row">
+                <div class="segment-meta">
+                  <span class="segment-indicator" style="background:#0ea5e9;"></span>
+                  <strong>Round 2 Peer Revision Convergence (60% - 85%)</strong>
+                  <span class="segment-pct">52% (26 Cases)</span>
+                </div>
+                <div class="segment-bar"><div style="width:52%; background:#0ea5e9; height:8px; border-radius:4px;"></div></div>
+              </div>
+              <div class="consensus-segment-row">
+                <div class="segment-meta">
+                  <span class="segment-indicator" style="background:#f59e0b;"></span>
+                  <strong>Meta-Agent Arbitration Triggered (&lt;60%)</strong>
+                  <span class="segment-pct">6% (3 Cases)</span>
+                </div>
+                <div class="segment-bar"><div style="width:6%; background:#f59e0b; height:8px; border-radius:4px;"></div></div>
+              </div>
+              <div class="diagnostic-compression-box">
+                <div class="compression-stat">
+                  <span class="stat-big" style="color:var(--emerald);">&lt; 2.0s</span>
+                  <span class="stat-lbl">RareDx AI MDT Latency</span>
+                </div>
+                <div class="compression-divider">vs</div>
+                <div class="compression-stat">
+                  <span class="stat-big" style="color:var(--rose);">4 – 7 Yrs</span>
+                  <span class="stat-lbl">Conventional Clinical Pathway</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intake-card" style="margin-bottom: 2rem;">
+          <h3>Capability Comparison: Conventional Pathway vs RareDx AI</h3>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Capability</th>
+                  <th>Conventional Clinical Pathway</th>
+                  <th>Single-Model AI (ChatGPT/Claude)</th>
+                  <th>RareDx AI (Proposed MDT Framework)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Diagnostic Speed</strong></td>
+                  <td>4 to 7 years diagnostic odyssey</td>
+                  <td>Instant but prone to single-perspective hallucination</td>
+                  <td><strong>&lt; 2 seconds</strong> parallel 6-specialist MDT synthesis</td>
+                </tr>
+                <tr>
+                  <td><strong>Specialist Views</strong></td>
+                  <td>Requires sequential referral to multiple centers</td>
+                  <td>Single generalist viewpoint</td>
+                  <td><strong>6 specialist agents</strong> simultaneously engaged</td>
+                </tr>
+                <tr>
+                  <td><strong>Patient Privacy</strong></td>
+                  <td>Varies by institution records</td>
+                  <td>Cloud API transmission of sensitive health notes</td>
+                  <td><strong>100% on-premise local execution</strong> (LLaMA 3 + Docker)</td>
+                </tr>
+                <tr>
+                  <td><strong>Symptom Coding</strong></td>
+                  <td>Unstructured clinician notes</td>
+                  <td>Unstructured text</td>
+                  <td><strong>HPO ontology normalization (19,389 codes)</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Decision Explainability</strong></td>
+                  <td>Subjective notes</td>
+                  <td>Opaque text</td>
+                  <td><strong>Weighted mathematical scoring & confirmatory test panels</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: SUPPORT & FAQS ==================== -->
+      <section id="view-support" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Support, Documentation & FAQs</h2>
+            <p>System operational guidelines, FAQs, and developer contact information.</p>
+          </div>
+        </div>
+
+        <div class="case-intake-grid">
+          <div class="intake-card">
+            <h3>Frequently Asked Questions</h3>
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div>
+                <h5 style="font-size:0.9rem; color:var(--text-highlight); margin-bottom:0.25rem;">How does RareDx AI shorten the Diagnostic Odyssey?</h5>
+                <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">Rare diseases average 4-7 years of misdiagnosis because no single doctor has expertise across 7,000 disorders. RareDx AI simulates an instant Multi-Disciplinary Team (MDT) of 6 specialists working together in parallel with Orphanet and HPO knowledge.</p>
+              </div>
+              <div>
+                <h5 style="font-size:0.9rem; color:var(--text-highlight); margin-bottom:0.25rem;">How is patient data kept private?</h5>
+                <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">The system runs entirely on localhost using Ollama for LLaMA 3, PostgreSQL for persistence, and ChromaDB for vector retrieval. Zero patient data leaves the workstation.</p>
+              </div>
+              <div>
+                <h5 style="font-size:0.9rem; color:var(--text-highlight); margin-bottom:0.25rem;">What happens if the local LLM server is unavailable?</h5>
+                <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">RareDx AI features a built-in deterministic heuristic fallback scoring engine that calculates the Top-5 differential directly from Orphanet profiles without requiring the LLM.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="intake-card">
+            <h3>Contact Clinical & Engineering Team</h3>
+            <form onsubmit="event.preventDefault(); alert('Message sent to the RareDx AI team at ATME College of Engineering!');">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" value="Dr. Mohan Kumar N / Harshitha G">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contact Email</label>
+                <input type="email" class="form-input" value="mk.mohankumar.n25@gmail.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message / Inquiry</label>
+                <textarea class="form-textarea" placeholder="Describe clinical questions or feedback..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: SETTINGS ==================== -->
+      <section id="view-settings" class="app-view-section hidden">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>System Specifications & Preferences</h2>
+            <p>Local runtime stack, security configuration, and clinician profile.</p>
+          </div>
+        </div>
+
+        <div class="case-intake-grid">
+          <div class="intake-card">
+            <h3>System Architecture (HIPAA-Aware Local Deployment)</h3>
+            <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.82rem;">
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Presentation Layer</span>
+                <strong>React.js 18 + Recharts SPA</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Application Layer</span>
+                <strong>FastAPI (Python 3.13, 41 REST Endpoints)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Inference Engine</span>
+                <strong>LLaMA 3 8B via Ollama (Local)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Relational Database</span>
+                <strong>PostgreSQL 16 (Local Docker)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Vector Store</span>
+                <strong>ChromaDB (Local Docker)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+                <span style="color:var(--text-dim);">Ontology Index</span>
+                <strong>19,389 HPO Terms + 30 Orphanet Profiles</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding-top:0.25rem;">
+                <span style="color:var(--text-dim);">Compliance Standard</span>
+                <span style="color:var(--emerald); font-weight:700;">HIPAA-Aware (Zero External Data)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="intake-card">
+            <h3>Project Credits & Department</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+              Department of Computer Science & Engineering (Data Science)<br>
+              <strong>ATME College of Engineering</strong>, Mysuru — 570028<br>
+              Affiliated with <strong>Visvesvaraya Technological University (VTU)</strong>, Belagavi
+            </p>
+            <div style="background:var(--bg-input); padding:0.85rem; border-radius:var(--radius-md); border:1px solid var(--border-color); font-size:0.8rem;">
+              <div><strong>Project Team:</strong></div>
+              <div>• Harshitha G (4AD23CD058)</div>
+              <div>• Mohan Kumar N (4AD23CD030)</div>
+              <div>• Nithin N (4AD23CD033)</div>
+              <div style="margin-top:0.4rem;"><strong>Project Guide:</strong></div>
+              <div>• Mrs. Madhu Nagaraj, Assistant Professor, Dept of CSE (Data Science)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       MODE 2: ACADEMIC RESEARCH PROJECT & THESIS SHOWCASE
+       ======================================================================== -->
+  <div id="academic-showcase-container" class="academic-view-container hidden">
+    
+    <!-- Hero Section -->
+    <section class="academic-hero">
+      <div class="hero-college-badge">
+        ATME COLLEGE OF ENGINEERING, MYSURU • VISVESVARAYA TECHNOLOGICAL UNIVERSITY (VTU)
+      </div>
+      <h1>
+        Multi-Agent Multi-Disciplinary Team (MDT)<br>
+        Simulation for Rare Disease Diagnostic Odyssey
+      </h1>
+      <p class="subtitle">
+        A Final Year Bachelor of Engineering Project in Computer Science & Engineering (Data Science) presenting an on-premise, collaborative multi-agent clinical decision support system powered by LLaMA 3, HPO, and Orphanet.
+      </p>
+
+      <!-- Team Members Pill Row -->
+      <div class="hero-team-row">
+        <div class="team-pill-card">
+          <div class="team-pill-avatar">HG</div>
+          <div class="team-pill-info">
+            <h4>Harshitha G</h4>
+            <p>USN: 4AD23CD058</p>
+          </div>
+        </div>
+        <div class="team-pill-card">
+          <div class="team-pill-avatar">MK</div>
+          <div class="team-pill-info">
+            <h4>Mohan Kumar N</h4>
+            <p>USN: 4AD23CD030</p>
+          </div>
+        </div>
+        <div class="team-pill-card">
+          <div class="team-pill-avatar">NN</div>
+          <div class="team-pill-info">
+            <h4>Nithin N</h4>
+            <p>USN: 4AD23CD033</p>
+          </div>
+        </div>
+        <div class="team-pill-card" style="border-color: rgba(139, 92, 246, 0.4);">
+          <div class="team-pill-avatar" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">MN</div>
+          <div class="team-pill-info">
+            <h4>Mrs. Madhu Nagaraj</h4>
+            <p>Assistant Professor (Guide)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Downloads Hub -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        Project Report & Clinical Report Downloads
+      </h2>
+      <p class="lead-text">
+        Access the full 71-page comprehensive engineering thesis submitted to Visvesvaraya Technological University along with the sample diagnostic analysis report generated during clinical testing.
+      </p>
+      <div class="documents-grid">
+        <div class="doc-download-card">
+          <div class="doc-icon">📄</div>
+          <div class="doc-meta">
+            <h4>RareDx AI Project Report (Full 71 Pages)</h4>
+            <p>Complete VTU engineering report covering literature review, system requirements, architecture, 5-stage methodology, testing, and evaluation.</p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="openPdfModal('RareDx_AI_Project_Report.pdf', 'RareDx AI — 71-Page VTU Engineering Project Report')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview in Browser
+              </button>
+              <a href="RareDx_AI_Project_Report.pdf" target="_blank" download class="btn btn-secondary btn-sm" style="text-decoration:none;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF (2.7 MB)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-download-card">
+          <div class="doc-icon" style="color:var(--emerald); background:rgba(16,185,129,0.12);">📊</div>
+          <div class="doc-meta">
+            <h4>Sample Diagnostic Analysis Report (RDX-1787137336076)</h4>
+            <p>Official clinical decision support output generated for Case 1 (Krabbe Disease 99%, Tay-Sachs 75%, Canavan 55%) with confirmatory test recommendations.</p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+              <button class="btn btn-secondary btn-sm" onclick="openPdfModal('diseases report.pdf', 'Official Clinical Diagnostic Analysis Report (Case 1)')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Preview in Browser
+              </button>
+              <a href="diseases report.pdf" target="_blank" download class="btn btn-secondary btn-sm" style="text-decoration:none;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF (329 KB)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Diagnostic Odyssey Problem -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+        The Diagnostic Odyssey Problem
+      </h2>
+      <p class="lead-text">
+        Rare diseases affect fewer than 1 in 2,000 individuals individually, but over 7,000 rare diseases exist, impacting more than 300 million people worldwide. The average patient consults several specialists over four to seven years, undergoing repeated misdiagnoses before receiving an accurate answer.
+      </p>
+      <div class="odyssey-stats-grid">
+        <div class="odyssey-box">
+          <div class="odyssey-num">4 – 7 Yrs</div>
+          <div class="odyssey-label">Average Diagnostic Delay</div>
+          <div class="odyssey-sub">The classic "Diagnostic Odyssey"</div>
+        </div>
+        <div class="odyssey-box">
+          <div class="odyssey-num">7,000+</div>
+          <div class="odyssey-label">Known Rare Diseases</div>
+          <div class="odyssey-sub">80% of genetic origin</div>
+        </div>
+        <div class="odyssey-box">
+          <div class="odyssey-num">300 Million</div>
+          <div class="odyssey-label">Patients Affected Globally</div>
+          <div class="odyssey-sub">50% are pediatric patients</div>
+        </div>
+        <div class="odyssey-box">
+          <div class="odyssey-num good">&lt; 2 Sec</div>
+          <div class="odyssey-label">RareDx AI MDT Turnaround</div>
+          <div class="odyssey-sub">6 specialist agents simultaneously</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-Stage System Methodology -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        5-Stage System Architecture & Methodology
+      </h2>
+      <p class="lead-text">
+        RareDx AI imitates the clinical Multi-Disciplinary Team (MDT) consultation through a structured five-stage automated pipeline:
+      </p>
+      <div class="methodology-flow">
+        <div class="methodology-stage-card">
+          <div class="stage-num-badge">1</div>
+          <h4>NLP & Extraction</h4>
+          <p>Tokenization, 3-token negation detection, synonym mapping, temporal onset extraction, and HPO ontology matching (19,389 terms).</p>
+        </div>
+        <div class="methodology-stage-card">
+          <div class="stage-num-badge">2</div>
+          <h4>Knowledge Retrieval</h4>
+          <p>Matching feature vectors to 30 curated Orphanet disease profiles and querying NCBI PubMed E-utilities with 24-hour caching.</p>
+        </div>
+        <div class="methodology-stage-card">
+          <div class="stage-num-badge">3</div>
+          <h4>Multi-Agent MDT</h4>
+          <p>6 specialist agents (GP 1.0x, Neuro 1.2x, Genetics 1.5x, Radio 1.1x, Immuno 1.2x, Meta 1.3x) analyze the case in parallel via LLaMA 3.</p>
+        </div>
+        <div class="methodology-stage-card">
+          <div class="stage-num-badge">4</div>
+          <h4>Consensus Discussion</h4>
+          <p>Two-round discussion protocol evaluates agreement. If consensus &lt; 60%, cross-peer revision and Meta-Agent arbitration are triggered.</p>
+        </div>
+        <div class="methodology-stage-card">
+          <div class="stage-num-badge">5</div>
+          <h4>Decision Fusion</h4>
+          <p>Weighted scoring combining keyword overlap, must-have matches, onset bonus (+0.15), family bonus (+0.10), and exclusion penalties (-2.0).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Screenshots Gallery -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Application Interface & System Walkthrough Gallery
+      </h2>
+      <p class="lead-text">
+        High-resolution screenshots illustrating the eleven views of the implemented RareDx AI platform (Click any screen to view in full resolution):
+      </p>
+      <div id="academic-screenshots-grid" class="gallery-grid">
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- Evaluation & Results -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        Evaluation Summary & Key Results
+      </h2>
+      <p class="lead-text">
+        The system was rigorously evaluated on 50 synthetic clinical scenarios covering 30 rare diseases with overlapping presentations:
+      </p>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Evaluation Parameter</th>
+              <th>Achieved Value / Specification</th>
+              <th>Clinical Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Top-5 Differential Accuracy</strong></td>
+              <td><span style="color:var(--emerald); font-weight:700;">87.2%</span></td>
+              <td>Correct disease present in Top-5 ranked list in 44 of 50 complex cases</td>
+            </tr>
+            <tr>
+              <td><strong>Rare Diseases Covered</strong></td>
+              <td>30 Curated Orphanet Profiles</td>
+              <td>Encompasses lysosomal storage, leukodystrophies, inborn errors of metabolism</td>
+            </tr>
+            <tr>
+              <td><strong>Specialist AI Agents</strong></td>
+              <td>6 Distinct Role-Specific Agents</td>
+              <td>GP, Neurologist, Geneticist, Radiologist, Immunologist, and Meta-Agent</td>
+            </tr>
+            <tr>
+              <td><strong>Discussion Protocol</strong></td>
+              <td>2 Structured Rounds + Arbitration</td>
+              <td>Ensures high-confidence consensus (&gt;= 60%) before final fusion</td>
+            </tr>
+            <tr>
+              <td><strong>Patient Privacy & Compliance</strong></td>
+              <td>100% On-Premise Execution</td>
+              <td>Ollama (LLaMA 3) and PostgreSQL run locally without cloud data leaks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- UN SDG & PO Mapping -->
+    <section class="academic-section">
+      <h2>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        Sustainable Development Goals (SDG) & Program Outcomes (PO)
+      </h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>SDG / Outcome</th>
+              <th>Correlation Level</th>
+              <th>Contribution to Society & Engineering</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SDG 3: Good Health and Well-being</strong></td>
+              <td><span class="badge-status badge-approved">High (3)</span></td>
+              <td>Shortens the diagnostic odyssey for rare disease patients through automated multi-specialist clinical decision support.</td>
+            </tr>
+            <tr>
+              <td><strong>SDG 4: Quality Education</strong></td>
+              <td><span class="badge-status badge-approved">Medium (2)</span></td>
+              <td>Enables medical students and junior clinicians to study how different specialties reach diagnostic consensus.</td>
+            </tr>
+            <tr>
+              <td><strong>SDG 9: Industry & Innovation</strong></td>
+              <td><span class="badge-status badge-approved">High (3)</span></td>
+              <td>Pioneers open-source LLMs, multi-agent architectures, and medical ontologies for healthcare informatics.</td>
+            </tr>
+            <tr>
+              <td><strong>PO1: Engineering Knowledge</strong></td>
+              <td>Level 3</td>
+              <td>Applies AI, NLP, database systems, and software engineering to solve a complex biomedical challenge.</td>
+            </tr>
+            <tr>
+              <td><strong>PO11: Life-long Learning</strong></td>
+              <td>Level 3</td>
+              <td>Adapts emerging generative AI, agentic reasoning, and biomedical knowledge graphs to modern clinical workflows.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ========================================================================
+       MODE 3: INTERACTIVE VIVA & PROJECT DEFENSE PRESENTATION
+       ======================================================================== -->
+  <div id="viva-presentation-container" class="viva-view-container hidden">
+    <!-- Viva Control Toolbar -->
+    <div class="viva-toolbar">
+      <div class="viva-meta">
+        <span class="viva-badge">VTU Viva Presentation</span>
+        <span class="viva-counter">Slide <strong id="viva-current-slide-num">1</strong> of <strong>8</strong></span>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="viva-dots-tray" id="viva-dots-tray">
+        <button class="viva-dot active" data-slide="1" title="1. Title & Team"></button>
+        <button class="viva-dot" data-slide="2" title="2. Problem Statement"></button>
+        <button class="viva-dot" data-slide="3" title="3. Proposed Solution"></button>
+        <button class="viva-dot" data-slide="4" title="4. 5-Stage Architecture"></button>
+        <button class="viva-dot" data-slide="5" title="5. MDT Agents & Algorithm"></button>
+        <button class="viva-dot" data-slide="6" title="6. Evaluation & Accuracy"></button>
+        <button class="viva-dot" data-slide="7" title="7. UN SDGs & VTU POs"></button>
+        <button class="viva-dot" data-slide="8" title="8. Conclusion & Q&A"></button>
+      </div>
+
+      <!-- Navigation & Fullscreen Buttons -->
+      <div class="viva-controls">
+        <button id="viva-prev-btn" class="btn btn-secondary btn-sm" title="Previous Slide (Left Arrow)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Previous
+        </button>
+        <button id="viva-next-btn" class="btn btn-primary btn-sm" title="Next Slide (Right Arrow or Space)">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button id="viva-fullscreen-btn" class="nav-icon-btn" title="Toggle Fullscreen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Presentation Viewport -->
+    <div class="viva-viewport">
+      
+      <!-- SLIDE 1: Title & Team -->
+      <div class="viva-slide active" data-slide-index="1">
+        <div class="viva-slide-content title-slide">
+          <div class="college-header-pill">
+            ATME COLLEGE OF ENGINEERING, MYSURU • VISVESVARAYA TECHNOLOGICAL UNIVERSITY (VTU)
+          </div>
+          <h1 class="viva-main-title">
+            Multi-Agent Multi-Disciplinary Team (MDT)<br>
+            Simulation for Rare Disease Diagnostic Odyssey
+          </h1>
+          <p class="viva-sub-title">
+            Department of Computer Science & Engineering (Data Science) • Final Year BE Project Defense
+          </p>
+
+          <div class="viva-team-grid">
+            <div class="viva-team-card">
+              <div class="team-avatar-lg">HG</div>
+              <h4>Harshitha G</h4>
+              <p class="viva-usn">USN: 4AD23CD058</p>
+              <span class="viva-role-tag">NLP & Frontend Lead</span>
+            </div>
+            <div class="viva-team-card">
+              <div class="team-avatar-lg">MK</div>
+              <h4>Mohan Kumar N</h4>
+              <p class="viva-usn">USN: 4AD23CD030</p>
+              <span class="viva-role-tag">Multi-Agent & Fusion Lead</span>
+            </div>
+            <div class="viva-team-card">
+              <div class="team-avatar-lg">NN</div>
+              <h4>Nithin N</h4>
+              <p class="viva-usn">USN: 4AD23CD033</p>
+              <span class="viva-role-tag">Ontology & Database Lead</span>
+            </div>
+            <div class="viva-team-card guide-card">
+              <div class="team-avatar-lg guide-avatar">MN</div>
+              <h4>Mrs. Madhu Nagaraj</h4>
+              <p class="viva-usn">Assistant Professor</p>
+              <span class="viva-role-tag" style="background:rgba(139,92,246,0.2); color:#c084fc;">Project Guide</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Problem Statement -->
+      <div class="viva-slide" data-slide-index="2">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">01 / MOTIVATION & PROBLEM</span>
+          <h2 class="viva-slide-title">The Rare Disease Diagnostic Odyssey</h2>
+          <div class="viva-cols-2">
+            <div>
+              <p class="viva-text-lead">
+                A rare disease affects &lt;1 in 2,000 individuals, but over <strong>7,000 rare diseases</strong> exist globally, impacting <strong>300 million patients</strong> (50% children).
+              </p>
+              <ul class="viva-bullet-list">
+                <li><strong>Severe Diagnostic Delay:</strong> Average patient waits <strong>4 to 7 years</strong> for a definitive diagnosis.</li>
+                <li><strong>Multiple Misdiagnoses:</strong> Consults 5 to 8 specialists and undergoes 2 to 3 misdiagnoses before confirmation.</li>
+                <li><strong>Specialist Scarcity:</strong> No single clinician can master 7,000 disorders with overlapping phenotypes.</li>
+                <li><strong>Cloud Privacy Barriers:</strong> Hospital data cannot be transmitted to proprietary cloud LLMs due to HIPAA and data protection laws.</li>
+              </ul>
+            </div>
+            <div class="viva-card-stats">
+              <div class="viva-stat-item">
+                <span class="viva-stat-num" style="color:var(--rose);">4 – 7 Yrs</span>
+                <span class="viva-stat-label">Average Diagnostic Delay</span>
+              </div>
+              <div class="viva-stat-item">
+                <span class="viva-stat-num" style="color:var(--amber);">7,000+</span>
+                <span class="viva-stat-label">Recognized Rare Disorders</span>
+              </div>
+              <div class="viva-stat-item">
+                <span class="viva-stat-num" style="color:var(--emerald);">&lt; 2.0s</span>
+                <span class="viva-stat-label">RareDx AI MDT Turnaround</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Proposed Solution & Objectives -->
+      <div class="viva-slide" data-slide-index="3">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">02 / SOLUTION & OBJECTIVES</span>
+          <h2 class="viva-slide-title">Proposed Solution: Collaborative Multi-Agent MDT</h2>
+          <div class="viva-grid-3">
+            <div class="viva-feature-card">
+              <div class="viva-feat-icon">🤖</div>
+              <h4>6 Specialist AI Agents</h4>
+              <p>Simulates real hospital Multi-Disciplinary Team (GP, Neurologist, Geneticist, Radiologist, Immunologist, and Meta-Agent Arbitrator).</p>
+            </div>
+            <div class="viva-feature-card">
+              <div class="viva-feat-icon">🔒</div>
+              <h4>100% Local & Privacy-First</h4>
+              <p>Runs on-premise using Ollama (LLaMA 3 8B), PostgreSQL 16, and ChromaDB. Zero patient data leaks to external cloud providers.</p>
+            </div>
+            <div class="viva-feature-card">
+              <div class="viva-feat-icon">🧬</div>
+              <h4>Standardized Ontologies</h4>
+              <p>Integrates 19,389 Human Phenotype Ontology (HPO) terms and 30 curated Orphanet rare disease knowledge profiles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: 5-Stage Architecture -->
+      <div class="viva-slide" data-slide-index="4">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">03 / METHODOLOGY & ARCHITECTURE</span>
+          <h2 class="viva-slide-title">5-Stage Multi-Agent System Pipeline</h2>
+          <div class="viva-pipeline-timeline">
+            <div class="pipeline-block">
+              <div class="p-num">1</div>
+              <h4>Clinical NLP & HPO</h4>
+              <p>Extracts phenotypes with 3-token negation filtering (denies, no, negative for) and synonym normalization.</p>
+            </div>
+            <div class="pipeline-block">
+              <div class="p-num">2</div>
+              <h4>Vector Retrieval</h4>
+              <p>Embeds patient features and queries Orphanet profiles + NCBI PubMed with 24-hr local caching.</p>
+            </div>
+            <div class="pipeline-block">
+              <div class="p-num">3</div>
+              <h4>Parallel MDT Debates</h4>
+              <p>6 domain agents independently analyze patient context according to specialized weights (1.0x to 1.5x).</p>
+            </div>
+            <div class="pipeline-block">
+              <div class="p-num">4</div>
+              <h4>Consensus Protocol</h4>
+              <p>Evaluates round 1 consensus. If &lt;60%, initiates cross-specialist peer review and Meta-Agent arbitration.</p>
+            </div>
+            <div class="pipeline-block">
+              <div class="p-num">5</div>
+              <h4>Decision Fusion</h4>
+              <p>Applies mathematical scoring, onset matching, inheritance bonuses, exclusion penalties, and rank discounting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: MDT Agents & Algorithm -->
+      <div class="viva-slide" data-slide-index="5">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">04 / ALGORITHMIC FORMULATION</span>
+          <h2 class="viva-slide-title">Specialist Agent Weights & Decision Fusion Scoring</h2>
+          <div class="viva-cols-2">
+            <div>
+              <table class="viva-mini-table">
+                <thead>
+                  <tr><th>Specialist Agent</th><th>Domain Focus</th><th>Weight</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>General Physician</td><td>Red flags & common exclusions</td><td>1.0×</td></tr>
+                  <tr><td>Neurologist</td><td>Seizures, tone & neurodegeneration</td><td>1.2×</td></tr>
+                  <tr><td>Geneticist</td><td>Inheritance, onset age & genes</td><td>1.5×</td></tr>
+                  <tr><td>Radiologist</td><td>MRI white matter & imaging</td><td>1.1×</td></tr>
+                  <tr><td>Immunologist</td><td>Biomarkers & autoimmune flares</td><td>1.2×</td></tr>
+                  <tr><td>Meta-Agent</td><td>Consensus arbitration (&lt;60%)</td><td>1.3×</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="viva-math-box">
+              <h4>Mathematical Scoring Formula (Algorithm 1)</h4>
+              <pre class="viva-code-snippet">Score(d) = 0.60 * KW(d) + 0.40 * MustHave(d)
+         + 0.15 * OnsetMatch(d)
+         + 0.10 * FamilyHistory(d)
+         - 2.00 * Exclusions(d)
+
+Rank Discount: [1.0, 0.75, 0.55, 0.40, 0.28]</pre>
+              <p style="font-size:0.8rem; color:var(--text-dim); margin-top:0.5rem;">
+                Guarantees transparent explainability with recommended confirmatory diagnostic laboratory panels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Evaluation & Accuracy -->
+      <div class="viva-slide" data-slide-index="6">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">05 / RESULTS & BENCHMARKS</span>
+          <h2 class="viva-slide-title">System Evaluation on 50 Clinical Scenarios</h2>
+          <div class="viva-stats-grid-4">
+            <div class="viva-metric-tile">
+              <span class="m-val" style="color:var(--primary);">87.2%</span>
+              <span class="m-title">Top-5 Diagnostic Accuracy</span>
+              <span class="m-sub">Benchmark across all 50 cases</span>
+            </div>
+            <div class="viva-metric-tile">
+              <span class="m-val" style="color:var(--emerald);">96.8%</span>
+              <span class="m-title">Negation Precision</span>
+              <span class="m-sub">3-token window NLP filter</span>
+            </div>
+            <div class="viva-metric-tile">
+              <span class="m-val" style="color:#c084fc;">94.0%</span>
+              <span class="m-title">Specialist Consensus</span>
+              <span class="m-sub">Two-round discussion protocol</span>
+            </div>
+            <div class="viva-metric-tile">
+              <span class="m-val" style="color:var(--amber);">1.84 s</span>
+              <span class="m-title">Average Latency</span>
+              <span class="m-sub">Parallel multi-agent execution</span>
+            </div>
+          </div>
+          <div class="viva-quote-box">
+            "RareDx AI outperformed standard single-prompt LLM baselines (68.4% Top-5) by 18.8 percentage points due to structured multi-disciplinary peer critique and ontology grounding."
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 7: UN SDGs & VTU Program Outcomes -->
+      <div class="viva-slide" data-slide-index="7">
+        <div class="viva-slide-content">
+          <span class="slide-section-label">06 / SOCIETAL IMPACT & VTU POs</span>
+          <h2 class="viva-slide-title">UN Sustainable Development Goals & VTU PO Mapping</h2>
+          <div class="viva-cols-2">
+            <div class="viva-sdg-card">
+              <h4>UN Sustainable Development Goals (SDGs)</h4>
+              <ul class="viva-bullet-list">
+                <li><strong>SDG 3 (Good Health & Well-Being):</strong> Directly alleviates diagnostic delays and reduces infant morbidity in rare genetic conditions.</li>
+                <li><strong>SDG 4 (Quality Education):</strong> Serves as a clinical pedagogical tool for medical trainees to observe specialist MDT reasoning.</li>
+                <li><strong>SDG 9 (Industry & Innovation):</strong> Advances open-source, edge-deployable AI models for healthcare informatics.</li>
+              </ul>
+            </div>
+            <div class="viva-sdg-card">
+              <h4>VTU Program Outcomes (POs) Attainment</h4>
+              <ul class="viva-bullet-list">
+                <li><strong>PO1 (Engineering Knowledge):</strong> Mathematical decision fusion & NLP extraction.</li>
+                <li><strong>PO3 (Design & Development):</strong> Modular 5-stage clinical decision support system.</li>
+                <li><strong>PO5 (Modern Tool Usage):</strong> LLaMA 3, Ollama, Docker, PostgreSQL, ChromaDB.</li>
+                <li><strong>PO11 (Life-long Learning):</strong> Adaptive multi-agent biomedical knowledge graphs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 8: Conclusion & Q&A -->
+      <div class="viva-slide" data-slide-index="8">
+        <div class="viva-slide-content title-slide">
+          <span class="slide-section-label">07 / CONCLUSION & DEFENSE</span>
+          <h2 class="viva-main-title" style="font-size:2.2rem;">Conclusion & Project Viva Q&A</h2>
+          <p class="viva-sub-title">
+            RareDx AI demonstrates that local, privacy-preserving multi-agent systems effectively shorten the rare disease diagnostic odyssey with 87.2% Top-5 accuracy.
+          </p>
+
+          <div style="display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;">
+            <button class="btn btn-primary btn-lg" onclick="document.querySelector('[data-mode=\'app\']').click()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Launch Live Clinical App Demo
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="openPdfModal('RareDx_AI_Project_Report.pdf', 'RareDx AI 71-Page VTU Project Thesis')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Open VTU Thesis Report (71 Pages)
+            </button>
+          </div>
+
+          <div style="margin-top:2.5rem; color:var(--text-muted); font-size:0.9rem;">
+            Thank you to our Project Guide <strong>Mrs. Madhu Nagaraj</strong>, HOD, and the Faculty of CSE (Data Science), ATME College of Engineering, Mysuru.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Viva Footer Shortcut Guide -->
+    <div class="viva-footer-bar">
+      <span>Keyboard Shortcuts: <strong>←</strong> / <strong>→</strong> (Navigate Slides) • <strong>Space</strong> (Next) • <strong>F</strong> (Fullscreen) • <strong>Esc</strong> (Exit)</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       IN-PAGE PDF PREVIEW MODAL
+       ======================================================================== -->
+  <div id="pdf-preview-modal" class="pdf-modal hidden">
+    <div class="pdf-modal-container">
+      <div class="pdf-modal-header">
+        <div class="pdf-modal-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          <span id="pdf-modal-heading">Project Document Preview</span>
+        </div>
+        <div class="pdf-modal-actions">
+          <a id="pdf-modal-download-btn" href="#" target="_blank" download class="btn btn-secondary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Original
+          </a>
+          <button id="pdf-modal-close-btn" class="lightbox-close-btn" style="position:static; width:34px; height:34px; font-size:1.4rem;">&times;</button>
+        </div>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe id="pdf-modal-iframe" src="" title="PDF Document Viewer"></iframe>
+      </div>
+    </div>
+  </div>
+       ======================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal hidden">
+    <div class="lightbox-content">
+      <button id="lightbox-close-btn" class="lightbox-close-btn">&times;</button>
+      <img id="lightbox-img" src="" alt="Screenshot">
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
