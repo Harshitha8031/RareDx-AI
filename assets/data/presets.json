@@ -1,0 +1,211 @@
+[
+  {
+    "id": "RDX-1787137336076",
+    "name": "Case 1: Krabbe Disease (Chapter 7 Benchmark)",
+    "clinician": "Harshitha G / Mohan Kumar N",
+    "age_group": "infancy",
+    "onset_age": 0.5,
+    "onset_label": "Infancy (6 months)",
+    "sex": "Female",
+    "onset_speed": "slowly progressive",
+    "family_history": true,
+    "symptoms": [
+      "seizures",
+      "muscle weakness",
+      "cognitive decline",
+      "developmental regression",
+      "failure to thrive",
+      "hypotonia"
+    ],
+    "notes": "Patient presented at 6 months of age with progressive developmental regression, loss of head control, marked hypotonia, and irritability. Seizures and cognitive decline noted over past 8 weeks. No hepatomegaly, no bone pain, and negative for cherry-red spot.",
+    "expected_primary": "Krabbe Disease",
+    "expected_orpha": "ORPHA:487",
+    "expected_confidence": 99,
+    "expected_differentials": [
+      {
+        "name": "Tay-Sachs Disease",
+        "confidence": 75,
+        "orpha": "ORPHA:845"
+      },
+      {
+        "name": "Canavan Disease",
+        "confidence": 55,
+        "orpha": "ORPHA:141"
+      },
+      {
+        "name": "Metachromatic Leukodystrophy",
+        "confidence": 40,
+        "orpha": "ORPHA:512"
+      },
+      {
+        "name": "Pompe Disease",
+        "confidence": 28,
+        "orpha": "ORPHA:365"
+      }
+    ],
+    "confirmatory_tests": [
+      "Galactocerebrosidase (GALC) enzyme assay in leukocytes",
+      "GALC gene targeted sequencing",
+      "Brain MRI (periventricular demyelination & globoid cells)",
+      "Nerve conduction studies (demyelinating neuropathy)"
+    ],
+    "status": "Pending Approval",
+    "date": "19 August 2026"
+  },
+  {
+    "id": "RDX-1787201948211",
+    "name": "Case 2: Wilson Disease (Neuro-Hepatic Presentation)",
+    "clinician": "Harshitha G / Mohan Kumar N",
+    "age_group": "childhood",
+    "onset_age": 14,
+    "onset_label": "Adolescent (14 years)",
+    "sex": "Male",
+    "onset_speed": "subacute",
+    "family_history": true,
+    "symptoms": [
+      "hepatomegaly",
+      "kayser-fleischer rings",
+      "ataxia",
+      "jaundice",
+      "dysarthria",
+      "splenomegaly"
+    ],
+    "notes": "14-year-old male with persistent jaundice, hepatomegaly, mild splenomegaly, slurred speech (dysarthria), and intention tremor. Ophthalmologist noted bilateral golden-brown Kayser-Fleischer rings in cornea. Denies seizures, no cherry-red spot.",
+    "expected_primary": "Wilson Disease",
+    "expected_orpha": "ORPHA:905",
+    "expected_confidence": 99,
+    "expected_differentials": [
+      {
+        "name": "Niemann-Pick Disease Type C",
+        "confidence": 74,
+        "orpha": "ORPHA:646"
+      },
+      {
+        "name": "Gaucher Disease Type 1",
+        "confidence": 54,
+        "orpha": "ORPHA:355"
+      },
+      {
+        "name": "Ataxia-Telangiectasia",
+        "confidence": 39,
+        "orpha": "ORPHA:791"
+      },
+      {
+        "name": "Sitosterolemia",
+        "confidence": 28,
+        "orpha": "ORPHA:312"
+      }
+    ],
+    "confirmatory_tests": [
+      "Slit-lamp examination for Kayser-Fleischer (KF) rings",
+      "Serum ceruloplasmin assay (<20 mg/dL)",
+      "24-hour urinary copper excretion (>100 mcg/24h)",
+      "ATP7B mutation analysis"
+    ],
+    "status": "Approved",
+    "date": "20 August 2026"
+  },
+  {
+    "id": "RDX-1787258391044",
+    "name": "Case 3: Gaucher Disease Type 1 (Visceral & Skeletal)",
+    "clinician": "Nithin N / Harshitha G",
+    "age_group": "childhood",
+    "onset_age": 8,
+    "onset_label": "Childhood (8 years)",
+    "sex": "Female",
+    "onset_speed": "slowly progressive",
+    "family_history": true,
+    "symptoms": [
+      "splenomegaly",
+      "hepatomegaly",
+      "bone pain",
+      "fatigue",
+      "bruising"
+    ],
+    "notes": "8-year-old female presenting with massive splenomegaly, moderate hepatomegaly, recurrent deep bone aching in femurs, and fatigue. No neurological regression, no seizures, denies optic atrophy.",
+    "expected_primary": "Gaucher Disease Type 1",
+    "expected_orpha": "ORPHA:355",
+    "expected_confidence": 98,
+    "expected_differentials": [
+      {
+        "name": "Niemann-Pick Disease Type C",
+        "confidence": 70,
+        "orpha": "ORPHA:646"
+      },
+      {
+        "name": "Mucopolysaccharidosis Type I",
+        "confidence": 51,
+        "orpha": "ORPHA:93"
+      },
+      {
+        "name": "Sitosterolemia",
+        "confidence": 36,
+        "orpha": "ORPHA:312"
+      },
+      {
+        "name": "Chronic Granulomatous Disease",
+        "confidence": 26,
+        "orpha": "ORPHA:908"
+      }
+    ],
+    "confirmatory_tests": [
+      "Beta-glucosidase (GBA) leukocyte enzyme activity",
+      "GBA1 full gene sequence analysis",
+      "Plasma glucosylsphingosine (Lyso-Gb1) biomarker",
+      "Femoral MRI for Erlenmeyer flask deformity & bone marrow infiltration"
+    ],
+    "status": "Approved",
+    "date": "21 August 2026"
+  },
+  {
+    "id": "RDX-1787319402851",
+    "name": "Case 4: Fabry Disease (Vascular & Neuropathic)",
+    "clinician": "Harshitha G / Mohan Kumar N",
+    "age_group": "juvenile",
+    "onset_age": 12,
+    "onset_label": "Juvenile (12 years)",
+    "sex": "Male",
+    "onset_speed": "chronic",
+    "family_history": true,
+    "symptoms": [
+      "angiokeratoma",
+      "peripheral neuropathy",
+      "corneal clouding",
+      "fatigue"
+    ],
+    "notes": "12-year-old male with severe episodic burning pain in hands and feet exacerbated by fever and exercise (acroparesthesia), dark reddish-purple punctate papules in the bathing trunk area (angiokeratoma), and cornea verticillata on slit-lamp exam.",
+    "expected_primary": "Fabry Disease",
+    "expected_orpha": "ORPHA:324",
+    "expected_confidence": 97,
+    "expected_differentials": [
+      {
+        "name": "Classical Ehlers-Danlos Syndrome",
+        "confidence": 68,
+        "orpha": "ORPHA:284"
+      },
+      {
+        "name": "Hereditary Angioedema",
+        "confidence": 50,
+        "orpha": "ORPHA:913"
+      },
+      {
+        "name": "Charcot-Marie-Tooth Disease Type 1A",
+        "confidence": 37,
+        "orpha": "ORPHA:101081"
+      },
+      {
+        "name": "Alkaptonuria",
+        "confidence": 25,
+        "orpha": "ORPHA:56"
+      }
+    ],
+    "confirmatory_tests": [
+      "Alpha-galactosidase A enzyme activity assay in plasma",
+      "GLA gene molecular sequencing",
+      "Plasma Lyso-Gb3 quantification",
+      "Slit-lamp examination for whorled corneal opacities (cornea verticillata)"
+    ],
+    "status": "Pending Approval",
+    "date": "22 August 2026"
+  }
+]
